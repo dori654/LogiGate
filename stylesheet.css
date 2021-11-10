@@ -1,8 +1,14 @@
-body{
-  background-color: lightblue;
+*{
+    padding: 0;
+    margin: 0;
 }
-
-p{
-  color: white;
-  font-size: 20px;
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}
+        
+body{
+  color: blue;
+  font-size: 26px;
 }
