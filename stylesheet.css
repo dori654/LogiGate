@@ -1,14 +1,24 @@
 *{
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
 }
-canvas {
-  background: #eee;
-  display: block;
-  margin: 0 auto;
-}
-        
+
+/*Body centered in the middle as a box */
 body{
-  color: blue;
-  font-size: 26px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
+
+/*White canvas with 5px border*/
+#myCanvas{
+  background-color: #fff;
+  border: 5px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
