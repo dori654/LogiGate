@@ -10,7 +10,7 @@ class SandParticle {
 	
 	//draw particle
 	draw() {
-		ctx.fillStyle = "black";
+		ctx.fillStyle = color;
 		ctx.fillRect(this.x, this.y, this.w, this.h);
 	}
     gravityUpdate(particles){
@@ -23,8 +23,8 @@ class SandParticle {
     }
 
     update(particles){
-        this.draw();
         this.gravityUpdate(particles);
+        this.draw();
     }
 
     //check if particles array has particle in all directions
@@ -39,19 +39,44 @@ class SandParticle {
         // ctx.fillRect(this.x -1 , this.y + 1, 1,1);
 
 
-        if (down == 1){
-            if (left == 1){
-                if (right == 1){
+        if (down == 1 || down == 2){
+
+            if (left == 1 || left == 2)
+            {
+                if (right == 1 || right == 2)
+                {
                     return false;
-                } else{
+                } 
+                else
+                {
                     this.x += 1;
                 }
-            } else{
+            } 
+            else
+            {
                 this.x -= 1;
             }
         } 
         return true;
     }
-}
+
+} //end sand particle class
+
+
+//stone
+class StoneParticle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        ctx.fillStyle = s_color;
+        ctx.fillRect(this.x, this.y, 1, 1);
+    }
+    update(particles){
+        this.draw();
+        particles[this.y][this.x] = 2;
+    }
+} //end stone particle class
 
 
