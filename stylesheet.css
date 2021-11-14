@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  font-family: Arial;
+  font-weight: bold;
 }
 
 /*Body centered in the middle as a box */
@@ -20,11 +22,16 @@ body{
   border: 5px solid #333;
   border-radius: 10px;
   padding: 00px;
-  width: 600px;
+  width: 600px; /*Change this value*/
   height: 500px;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+}
+
+/*insert spaces between table columns*/
+table{
+  border-spacing: 50px;
 }
 
