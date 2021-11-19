@@ -1,29 +1,57 @@
-document.addEventListener('mousedown',mouseHandler, false);
-document.addEventListener('mouseup', mouseHandler, false);
-document.addEventListener('mousemove', mouseHandler, false);
-document.addEventListener('wheel', mouseHandler, false);
+let canvas = document.getElementById("canvas");
+canvas.addEventListener('mousedown',mouseHandler, false);
+canvas.addEventListener('mouseup', mouseHandler, false);
+canvas.addEventListener('mousemove', mouseHandler, false);
+canvas.addEventListener('wheel', mouseHandler, false);
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  }, false);
 
-
-var mousedown = false;
-var mouseup = false;
+var mouseright = false;
+var mouseleft = false;
 var mouseX = 0;
 var mouseY = 0;
 var mouseDelta = 0;
 
 function mouseHandler(e) {
     if (e.type == "mousedown") {
-        mousedown = true;
-        mouseup = false;
+        if (e.button == 2) {
+            mouseright = true;
+        }
+        if (e.button == 0) {
+            mouseleft = true;
+        }
     }
     else if (e.type == "mouseup") {
-        mousedown = false;
-        mouseup = true;
+        if (e.button == 2) {
+            mouseright = false;
+        }
+        if (e.button == 0) {
+            mouseleft = false;
+        }
     }
     if (e.type == "mousemove") {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        //canvas mouse position
+        mouseX = e.clientX - canvas.offsetLeft;
+        mouseY = e.clientY - canvas.offsetTop;
     }
     if (e.type == "wheel") {
         mouseDelta = e.deltaY;
     }
+}
+
+function isCursorWithinRectangle(x, y, width, height) {
+    if(mouseX > x && mouseX < x + width && mouseY > y && mouseY < y + height) {
+        return true;
+    }
+    return false;
+}
+
+function isCursorWithinCircle(x, y, r) {
+    var distSqr = Math.pow(x - mouseX, 2) + Math.pow(y - mouseY, 2);
+
+    if(distSqr < r * r) {
+        return true;
+    }
+    return false;
 }

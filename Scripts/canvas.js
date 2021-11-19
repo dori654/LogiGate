@@ -1,5 +1,3 @@
-
-let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 const dimensions = [700,600];
 canvas.style.width = canvas.width = dimensions[0];
@@ -8,7 +6,7 @@ let speed = 30;
 
 //load up fire update event
 window.addEventListener("load", update);
-
+const shapes = [];
 //updates the canvas every frame
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -19,21 +17,20 @@ function update(){
 
     drawButtons();
     requestAnimationFrame(update);
+
+    // if (mousedown) draw_gate_base(mouseX, mouseY, 50, 50, "red");
+    if (mouseleft) shapes.push(new gate(50, 50, "red"));
+    shapes.forEach((s) => s.draw());
+
+    if (mouseright) {
+        shapes.some((s) => {
+            if (isCursorWithinRectangle(s.x,s.y,s.size.w,s.size.h)) {
+                drag(s);
+            }
+        });
+    }
 }
 
-//draw grid on canvas
-function drawGrid(){
-    ctx.strokeStyle = "gray";
-    for(let i = 0; i < canvas.width; i += 10){
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, canvas.height);
-    }
-    for(let i = 0; i < canvas.height; i += 10){
-        ctx.moveTo(0, i);
-        ctx.lineTo(canvas.width, i);
-    }
-    ctx.stroke();
-}
 
 function drawDotsGrid(){
     ctx.fillStyle = "gray";
@@ -49,8 +46,4 @@ function drawButtons(){
 ctx.fillStyle = "#1c261e";
 ctx.fillRect(0, canvas.height-w, canvas.width, w);
 
-}
-
-function isInside(pos, rect){
-    return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
 }
