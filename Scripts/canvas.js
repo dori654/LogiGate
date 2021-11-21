@@ -6,22 +6,22 @@ let speed = 30;
 
 //load up fire update event
 window.addEventListener("load", update);
+
 const shapes = [];
+
 //updates the canvas every frame
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#0d0f0e';
     ctx.fillRect(0, 0, dimensions[0], dimensions[1]);
-    // drawGrid();
     drawDotsGrid();
 
-    drawButtons();
-    requestAnimationFrame(update);
-
+    //drawButtons();
+    
     // if (mousedown) draw_gate_base(mouseX, mouseY, 50, 50, "red");
-    if (mouseleft) shapes.push(new gate(50, 50, "red"));
+    if (mouseleft) shapes.push(new gate(50, 50, "green"));
     shapes.forEach((s) => s.draw());
-
+    
     if (mouseright) {
         shapes.some((s) => {
             if (isCursorWithinRectangle(s.x,s.y,s.size.w,s.size.h)) {
@@ -29,6 +29,9 @@ function update(){
             }
         });
     }
+
+    //refresh the canvas
+    requestAnimationFrame(update);
 }
 
 
