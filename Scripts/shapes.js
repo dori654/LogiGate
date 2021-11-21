@@ -6,7 +6,6 @@ function draw_gate_base(x, y, width, height, color) {
     draw_circle(x,y + height/4,10,"white");
     draw_circle(x,y + height/1.5,10,"white");
     draw_circle(x+width,y + height/2,10,"white");
-    
 }
 
 
