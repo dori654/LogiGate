@@ -9,6 +9,8 @@
     <title>LogiGate</title>
     <link rel="stylesheet" href="Styles/main.css">
     <link rel="stylesheet" href="Styles/canvas_style.css">
+    <link rel="stylesheet" href="css/mainmenu.css">
+    <link rel="stylesheet" href="css/toolbar.css">
 
 </head>
 
@@ -27,6 +29,11 @@
         <a href="#" class="right">Sign In</a>
     </div>
    
+    <button onclick="settingsMenu.toggle()"><i class="material-icons"></i>SETTINGS</button>
+
+    <button onclick="window.close()"><i class="material-icons">FORCE </i>QUIT</button>
+
+
 <div id='canvas-container'>
     <canvas id="canvas" height="700" width="600"></canvas>
 </div>
