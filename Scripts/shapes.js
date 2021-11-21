@@ -3,6 +3,7 @@ function draw_gate_base(x, y, width, height, color) {
     ctx.fillRect(x, y, width, height);
     ctx.fillStyle = "white";
     ctx.fillText("AND", x + width/2, y + height/2);
+
     draw_circle(x,y + height/2,10,"white")
 }
 
