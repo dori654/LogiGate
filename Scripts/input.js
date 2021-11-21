@@ -4,7 +4,7 @@ canvas.addEventListener('mouseup', mouseHandler, false);
 canvas.addEventListener('mousemove', mouseHandler, false);
 canvas.addEventListener('wheel', mouseHandler, false);
 document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
+   e.preventDefault();
   }, false);
 
 var mouseright = false;
