@@ -12,6 +12,7 @@ var mouseleft = false;
 var mouseX = 0;
 var mouseY = 0;
 var mouseDelta = 0;
+var holding = false;
 
 function mouseHandler(e) {
     if (e.type == "mousedown") {

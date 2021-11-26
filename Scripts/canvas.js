@@ -8,7 +8,6 @@ let speed = 30;
 window.addEventListener("load", update);
 
 const shapes = [];
-
 //updates the canvas every frame
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -19,7 +18,7 @@ function update(){
     //drawButtons();
     
     // if (mousedown) draw_gate_base(mouseX, mouseY, 50, 50, "red");
-    if (mouseleft) shapes.push(new gate(50, 50, "green"));
+    if (mouseleft) shapes.push(new gate(50, 50, "red"));
     shapes.forEach((s) => s.draw());
     
     if (mouseright) {

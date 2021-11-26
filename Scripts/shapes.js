@@ -25,9 +25,19 @@ function draw_rectangle_path2d(x, y, width, height, color,shapes) {
 }*/
 
 function gate(width,height,color){
-
     this.x = mouseX;
     this.y = mouseY;
+    this.gate_input = {
+        
+        top = {
+            x: this.x,
+            y: y + height/4,
+        },
+        buttom = {
+            x: this.x,
+            y: y + height/1.5,
+        }
+    }
     this.size = {
         w: width,
         h: height,
