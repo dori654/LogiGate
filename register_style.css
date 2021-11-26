@@ -1,0 +1,82 @@
+h1{
+    text-align: center;
+    text-align: center;
+
+    width: 200;
+    height: 200;
+    color: rgb(0, 0, 0);
+    background-color: orangered;
+    font-weight: 500;
+    text-decoration: rgb(14, 13, 13) underline;
+    line-height: 2.5;
+    letter-spacing: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+h2{
+    width: 200px;
+    text-align: center;
+    color: orangered;
+}
+button{
+    width: 150px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(17, 31, 30);
+    font-family: fantasy;
+    letter-spacing: 2px;
+}
+label{
+    width: 250px;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background-color: orangered;
+    font-family: fantasy;
+    border-radius: 5px;
+    font-size: 20px;
+}
+body{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.877);
+    font-family: fantasy;
+    line-height: 2;
+    border-radius: 20px;
+}
+input{
+    text-align: center;
+    font-family: fantasy;
+    border-radius: 20px;
+}
+a{
+    text-align: center;
+    font-family: fantasy;
+    border-radius: 20px;
+}
+p{
+    text-align: center;
+    font-family: fantasy;
+    border-radius: 20px;
+   
+}
+div{
+    text-align: center;
+    font-family: fantasy;
+    border-radius: 20px; 
+   
+}
+#freedemo{
+    text-align: center;
+    color: rgb(24, 248, 248);
+    font-size: 30px;
+   
+   
+}
+
+#one{
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border-width: 1px;
+    border-color: orangered;
+    border-style: solid;
+    border-radius: 30px; 
+}
