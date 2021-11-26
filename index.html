@@ -23,20 +23,36 @@
 
     <div class="navbar">
         <a href="#" class="active">Home</a>
-        <a href="#">Tutorial</a>
+        <a href="game.html">Tutorial</a>
         <a href="#">Language</a>
         <a href="register.html" class="right">Sign Up</a>
         <a href="#" class="right">Sign In</a>
     </div>
-   
+
     <button onclick="settingsMenu.toggle()"><i class="material-icons"></i>SETTINGS</button>
 
     <button onclick="window.close()"><i class="material-icons">FORCE </i>QUIT</button>
 
 
-<div id='canvas-container'>
-    <canvas id="canvas" height="700" width="600"></canvas>
-</div>
+    <div id='canvas-container'>
+        <canvas id="canvas" height="700" width="600"></canvas>
+        <table id="tools">
+            <tr>
+                <td>
+                    <button id="mouse" , onClick="toolSelect('Mouse')">Mouse</button>
+                </td>
+                <td>
+                    <button id="and" , onClick="toolSelect('and')">AND</button>
+                </td>
+                <td>
+                    <button id="or" , onClick="toolSelect('or')">OR</button>
+                </td>
+                <td>
+                    <button id="not" , onClick="toolSelect('not')">NOT</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <div class="footer">
         <h2>Facebook</h2>
