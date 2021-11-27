@@ -27,7 +27,7 @@ $(document).ready(function () {
                     }
                 }
             },
-            user_name: {
+            id: {
                 validators: {
                     stringLength: {
                         min: 8,
@@ -37,7 +37,7 @@ $(document).ready(function () {
                     }
                 }
             },
-            user_password: {
+            password: {
                 validators: {
                     stringLength: {
                         min: 8,
@@ -47,7 +47,7 @@ $(document).ready(function () {
                     }
                 }
             },
-            confirm_password: {
+            co_password: {
                 validators: {
                     stringLength: {
                         min: 8,
@@ -77,10 +77,10 @@ $(document).ready(function () {
                         }
                     }
                 },
-                department: {
+                role: {
                     validators: {
                         notEmpty: {
-                            message: 'Please select your Department/Office'
+                            message: 'Please select your role'
                         }
                     }
                 },
@@ -105,4 +105,39 @@ $(document).ready(function () {
                 console.log(result);
             }, 'json');
         });
+
+
+// let movies = [];
+
+// const addMovie = (ev)=>{
+//     ev.preventDefault();  //to stop the form submitting
+//     let movie = {
+//         first_name:document.getElementById('first_name').value,
+//         last_name:document.getElementById('last_name').value,
+//         id:document.getElementById('id').value,
+//         password:document.getElementById('password').value,
+//         co_password:document.getElementById('co_password').value,
+//         email:document.getElementById('email').value,
+//         contact:document.getElementById('contact').value,
+//         role:document.getElementById('role').value
+//     }
+//     movies.push(movie);
+//     document.forms[0].reset(); // to clear the form for the next entries
+//     document.querySelector('form').reset();
+// 1
+//     //for display purposes only
+//     console.warn('added' , {movies} );
+//     let pre = document.querySelector('#msg pre');
+//     pre.textContent = '\n' + JSON.stringify(movies, '\t', 2);
+//     let f = pre.textContent;
+//     //saving to localStorage
+//     localStorage.setItem('MyMovieList', JSON.stringify(movies) );
+//     }
+//     document.addEventListener('DOMContentLoaded', ()=>{
+//     document.getElementById('btn').addEventListener('click', addMovie);
+
+        
+   
 });
+
+
