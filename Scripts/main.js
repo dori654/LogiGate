@@ -40,18 +40,15 @@ const addBlock = () => {
 
 
 function listener() {
-    document.getElementById("l1").setAttribute("x1", draggables[0].draggie.position.x + getOutputPos(50)[0]);
-    document.getElementById("l1").setAttribute("y1", draggables[0].draggie.position.y + getOutputPos(50)[1]);
+    $('#l1').attr('x1', getPos(last_input)[0] - $('svg').position().left);
+    $('#l1').attr('y1', getPos(last_input)[1] - $('svg').position().top);
+    $('#l1').attr('x2', getPos(last_output)[0] - $('svg').position().left);
+    $('#l1').attr('y2', getPos(last_output)[1] - $('svg').position().top);
 }
-
-
-document.addEventListener("keydown", addBlock);
-
-const main = () => {
+document.addEventListener("keydown", addBlock); const main = () => {
     init_gates();
 };
 
 main();
 
 document.addEventListener("keydown", addBlock);
-

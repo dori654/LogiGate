@@ -30,8 +30,9 @@ body {
     height: 20px;
     position: relative;
     z-index: 10;
-    border-radius: 50%;
+    border-radius: 100%;
     left: -10px;
+    /* opacity: 50%; */
   }
   .output{
     background: green;
@@ -48,6 +49,7 @@ body {
   }
   .block.draggable {
     --block-bg: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    /* opacity: 0.5; */
   }
 
   .block.animated {
@@ -73,8 +75,7 @@ body {
   }
   .lines{
     position: absolute;
-    background-color: green;
-    opacity: 0.1;
+    /* opacity: 0.1; */
   
   }
   .input:hover{
@@ -82,6 +83,13 @@ body {
   }
   .output:hover{
     background: gray;
+  }
+
+  .wire:hover{
+    background-color: white;
+    stroke: white;
+    /* capped corners */
+    border-radius: 10px;
   }
   
   
