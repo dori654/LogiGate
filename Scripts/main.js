@@ -1,7 +1,5 @@
-document.getElementById("blocks").innerHTML += `<div class="block draggable" data-id="3"></div>`;
-
+let draggables = [];
 //get all dragable elements on HTML page on startup
-let draggableBlocks = document.querySelectorAll('.block.draggable');
 
 //draggable blocks class
 class Draggable {
@@ -9,14 +7,16 @@ class Draggable {
         //draggable element reference
         this.draggableEl = el;
         //init API for draggable element
-        this.draggie = new Draggabilly(el);
+        this.draggie = new Draggabilly(el,
+            {
+                containment: true,
+                // grid: [30, 30],
+            });
         //starting position
         this.originPos = Object.assign({}, this.draggie.position);
-
     }
 }
 //init draggable blocks on startup
-let draggables = Array.from(draggableBlocks).map(block => new Draggable(block));
 
 
 const setSizes = (elements) => {
@@ -26,31 +26,32 @@ const setSizes = (elements) => {
     });
 };
 
-const addBlock = () => {
-    document.getElementById("blocks").innerHTML += `<div class="block draggable" data-id="4"></div>`;
-    draggableBlocks = document.querySelectorAll('.block.draggable');
-    // draggables.push(new Draggable(draggableBlocks[draggableBlocks.length - 1]));
+const init_gates = () => {
+    let draggableBlocks = document.querySelectorAll('.block.draggable');
     draggables = Array.from(draggableBlocks).map(block => new Draggable(block));
     setSizes(draggableBlocks);
-    console.log(draggables.length);
+    draggables.forEach(draggable => draggable.draggie.on('dragMove', listener));
+}
+
+const addBlock = () => {
+    document.getElementById("blocks").innerHTML += new_gate;
+    init_gates();
 };
-// const listenDragEvent = () => {
-//     draggables.forEach(draggable => {
-//         const draggie = draggable.draggie;
-//         draggie.on('dragEnd', function () {
-//             const draggableElement = this.element;
-//             const dragId = parseInt(draggableElement.dataset.id);
-//         });
-//     });
-// };
+
+
+function listener() {
+    document.getElementById("l1").setAttribute("x1", draggables[0].draggie.position.x + getOutputPos(50)[0]);
+    document.getElementById("l1").setAttribute("y1", draggables[0].draggie.position.y + getOutputPos(50)[1]);
+}
+
 
 document.addEventListener("keydown", addBlock);
 
 const main = () => {
-    setSizes(draggableBlocks);
-    //listenDragEvent();
-    console.log(type(draggableBlocks));
+    init_gates();
 };
+
 main();
 
 document.addEventListener("keydown", addBlock);
+

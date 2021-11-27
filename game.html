@@ -13,14 +13,31 @@
 
 <body>
     <div class="field">
-        <div class="draggable-blocks" id="blocks">
-            <div class="block draggable" data-id="1"></div>
-            <div class="block draggable" data-id="2"></div>
+        <div class="container" id="blocks">
+            <svg class="lines" width="500" height="500" preserveAspectRatio="auto">
+                <line id="l1" x1="0" y1="0" x2="500" y2="500" stroke="black" stroke-width="5" />
+                <line x1="0" y1="500" x2="500" y2="0" stroke="black" stroke-width="1" />
+            </svg>
 
+            <div class="block draggable" data-id="1">
+                <div class="input"></div>
+                <span class="gate">AND</span>
+                <div class="input"></div>
+                <div class="output"></div>
+            </div>
+            <div class="block draggable" data-id="2"></div>
         </div>
+
     </div>
+
+    <!-- SVG streches on whole screen -->
+    <div>
+
+    </div>
+    <script src="Scripts/shapes.js"></script>
     <script src='https://cdn.bootcdn.net/ajax/libs/draggabilly/2.3.0/draggabilly.pkgd.min.js'></script>
     <script src="Scripts/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
