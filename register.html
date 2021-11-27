@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forms Demo</title>
 
-    <link rel="stylesheet" href="register_style.css" />
-    <button id="freedemo">Free Demo</button>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms Demo</title>
 
-  <body>
-    <div id="one">
-      <h1>Sign Up Page</h1>
-      <form action="/tacos">
-        <p>
-          <label for="fname">Enter first name:</label>
-          <input id="fname" placeholder="First name" />
-        </p>
-        <p>
-            <label for="lname">Enter last name:</label>
-            <input id="lname" placeholder="Last name" />
-          </p>
-        <p>
-          <label for="email">Enter Email:</label>
-          <input type="email" placeholder="Email" />
-        </p>
-        <p>
-          <label for="password">Enter Password:</label>
-          <input type="password" placeholder="Password" id="password" />
-        </p>
-        <p>
-          <label for="username">Enter ID Num :</label>
-          <input id="username" placeholder="ID" />
-        </p>
-        <p>
-            <label for="tel">Enter Tel number:</label>
-            <input type="tel" placeholder="Tel number" />
-          </p>
-          <p>
-            <label for="adress">Enter home adress:</label>
-            <input id="adress" placeholder="Home adress" />
-          </p>
-        <p><!--role select-->
+  <link rel="stylesheet" href="Styles/register_style.css" />
+  <button id="freedemo">Free Demo</button>
+</head>
+
+<body>
+  <div id="one">
+    <h1>Sign Up Page</h1>
+    <form action="/tacos">
+      <p>
+        <label for="fname">Enter first name:</label>
+        <input id="fname" placeholder="First name" />
+      </p>
+      <p>
+        <label for="lname">Enter last name:</label>
+        <input id="lname" placeholder="Last name" />
+      </p>
+      <p>
+        <label for="email">Enter Email:</label>
+        <input type="email" placeholder="Email" />
+      </p>
+      <p>
+        <label for="password">Enter Password:</label>
+        <input type="password" placeholder="Password" id="password" />
+      </p>
+      <p>
+        <label for="username">Enter ID Num :</label>
+        <input id="username" placeholder="ID" />
+      </p>
+      <p>
+        <label for="tel">Enter Tel number:</label>
+        <input type="tel" placeholder="Tel number" />
+      </p>
+      <p>
+        <label for="adress">Enter home adress:</label>
+        <input id="adress" placeholder="Home adress" />
+      </p>
+      <p>
+        <!--role select-->
         <label for="roleselect">Select a role</label>
         <select name="role" id="roleselect">
           <option value="student">Student</option>
           <option value="teacher">Teacher</option>
           <option value="director">Director</option>
-        </p>
-        </select>
-        <div class="preference">
-          <label for="soul">I Agree to sell my soul and all.</label>
-          <input type="checkbox" name="soul" id="soul" />
-        </div>
+      </p>
+      </select>
+      <div class="preference">
+        <label for="soul">I Agree to sell my soul and all.</label>
+        <input type="checkbox" name="soul" id="soul" />
+      </div>
 
-        <button>Submit</button>
-      </form>
-    </div>
-  </body>
+      <button>Submit</button>
+    </form>
+  </div>
+</body>
+
 </html>

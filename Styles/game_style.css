@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  }
+  
+  .block {
+    position: relative;
+    width: var(--width, 0);
+    height: var(--width, 0);
+    background: var(--block-bg);
+    border-radius: var(--border-radius, 0);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .gate {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .input{
+    background: red;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 10;
+    border-radius: 100%;
+    left: -10px;
+    /* opacity: 50%; */
+  }
+  .output{
+    background: green;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 10;
+    border-radius: 50%;
+    left: var(--width);
+  }
+  .block.draggable {
+    --block-bg: rgba(78, 192, 233, 0.6);
+    cursor: pointer;
+  }
+  .block.draggable {
+    --block-bg: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    /* opacity: 0.5; */
+  }
+
+  .block.animated {
+    transition: 0.3s ease-out;
+  }
+  
+  .draggable-blocks {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    place-items: center;
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 0px;
+    border: 2px solid #F90;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .lines{
+    position: absolute;
+    /* opacity: 0.1; */
+  
+  }
+  .input:hover{
+    background: black;
+  }
+  .output:hover{
+    background: gray;
+  }
+
+  .wire:hover{
+    background-color: white;
+    stroke: white;
+    /* capped corners */
+    border-radius: 10px;
+  }
+  
+  
