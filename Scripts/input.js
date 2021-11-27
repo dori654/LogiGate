@@ -20,3 +20,8 @@ $(document).on('click', '.output', function () {
     last_output = $(this);
     console.log(last_output.offset());
 });
+
+$(document).on('click', '.wire', function () {
+    //delete wire
+    $(this).remove();
+});
