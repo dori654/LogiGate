@@ -25,125 +25,49 @@
 
 <body>
 
-  <div class="container">
-
-    <form class="well form-horizontal" action=" " method="post" id="contact_form">
-      <fieldset>
+  <form action="action_page.php">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
   
-        <!-- Form Name -->
-        <legend>
-        <center> 
-        <p><h2><b>Sign Up</b></h2></p>
-          
-        </legend>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
       
-        <!--first_name-->
-        <div class="form-group">
-          <label class="col-md-4 control-label">First Name</label>
-          <div class="col-md-4 inputGroupContainer">
-          <div class="formBox">
-            <label for="first_name"></label>
-            <input type="text" id="first_name" placeholder="First name"/>
-          </div>
-          </div>
-        </div>
+      <label for="name"><b>First Name</b></label>
+      <input type="text" placeholder="Enter name" name="name" id="name" required>
+      
+      <label for="last"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter last name" name="last" id="last" required>
+      
+      <label for="name"><b>ID</b></label>
+      <input type="text" placeholder="Enter ID" name="id" id="id" required>
+      
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
   
-        <!--  last_name-->
-        
-        <div class="form-group">
-          <label class="col-md-4 control-label">Last Name</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="last_name"></label>
-              <input type="text" id="last_name" placeholder="Last name"/>
-            </div>
-          </div>
-        </div>
-        
-  
-       
-  
-        <!-- ID-->
-        
-        <div class="form-group">
-          <label class="col-md-4 control-label">Enter ID</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="id"></label>
-              <input type="text" id="id" placeholder="ID"/>
-            </div>
-          </div>
-        </div>
-     
-        <!-- Password-->
-  
-        <div class="form-group">
-          <label class="col-md-4 control-label">Password</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="password"></label>
-              <input type="password" id="password" placeholder="Password"/>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Confirm Password-->
-  
-        <div class="form-group">
-          <label class="col-md-4 control-label">Confirm Password</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="co_password"></label>
-              <input type="password" id="co_password" placeholder="Confirm Password"/>
-            </div>
-          </div>
-        </div>
-  
-        <!-- E-Mail-->
-        <div class="form-group">
-          <label class="col-md-4 control-label">E-Mail</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="email"></label>
-              <input type="text" id="email" placeholder="E-Mail"/>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Text input-->
-  
-        <div class="form-group">
-          <label class="col-md-4 control-label">Contact No.</label>
-          <div class="col-md-4 inputGroupContainer">
-            <div class="formBox">
-              <label for="contact"></label>
-              <input type="text" id="contact" placeholder="Contact No."/>
-            </div>
-          </div>
-        </div>
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
 
-        <div class="form-group">
-          <label class="col-md-4 control-label">Select Role</label>
-          <div class="col-md-4 selectContainer">
-            <div class="input-group">
-              <select name="role" placeholder="Role" class="form-control selectpicker" id="role">
-                <option value="">Select Role</option>
-                <option>Student</option>
-                <option>Teacher</option>
-                <option>Director</option>
-              </select>
-            </div>
-          </div>
-        </div>
+      <label for="adress"><b>Resident Address</b></label>
+      <input type="text" placeholder="Enter redidental address" name="address" id="address" required>
+      
+      <label for="roles">Your role: </label>
+      <select name="account_type" id="acc_types">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+        <option value="director">Director</option>
+      </select>
+      <hr>
   
-        <div class="formBox">
-          <button id="btn">Submit</button>
-      </div>
-  
-      <div id="msg">
-          <pre></pre>
-      </div>
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
 
+
+
+  
+   
+  </form>
       <script>
         let movies = [];
         
