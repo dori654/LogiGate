@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/dashboard1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>User Manager</h3>
+
+    <input id="myInput" value="Some text.." />
+    <button id="myBtn" onclick="">Add User</button>
+    <button id="myBtn" onclick="">Remove User</button>
+    <button id="myBtn" onclick="">Edit User</button>
+    <script>
+      var input = document.getElementById("myInput");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("myBtn").click();
+        }
+      });
+    </script>
+  </body>
+</html>
