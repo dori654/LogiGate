@@ -1,6 +1,6 @@
 var last_input = 0;
 var last_output = 0;
-
+var draggables = []
 const getPos = (last) => {
     const pos = last.offset();
     const dim = last.outerWidth();
