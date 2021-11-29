@@ -10,18 +10,47 @@
 </head>
 
 <body>
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Create Room</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="#">Easy Room</a>
-      <a href="#">Medium Room</a>
-      <a href="#">Hard Room</a>
+  <form action="/newroom" method="post">
+    <div class="dropdown">
+      <button type="submit" value="easy" for="name" name="name">Easy Room</button>
+      <button type="submit" value="medium" for="name" name="name">Medium Room</button>
+      <button type="submit" value="hard" for="name" name="name">Hard Room</button>
     </div>
-  </div>
+    </div>
+    <textarea for="description" id="w3review" name="description" rows="4" cols="50"
+      placeholder="Enter mission description"></textarea>
+  </form>
 
-  <button class="btn success">Create Mission</button>
-  <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter mission description"></textarea>
+  <form action="/assign" method="post">
+    <label for="name">Assign to room:</label>
+    <input type="text" id="name" name="name" required />
+    <button type="submit">Add</button>
+  </form>
+  {% if rooms|length < 1 %} <p>No Rooms created</p>
+    {%else%}
+    <table>
+      <tr>
+        <th>Room Name</th>
+        <th>Room Description</th>
+        <th>Room users</th>
+      </tr>
+      {% for room in rooms %}
+      <tr>
+        <td>{{room.name}}</td>
+        <td>{{room.description}}</td>
+        <td>{{room.users}}</td>
+        <td>
+          <a href="/deleter/{{room.id}}">Delete</a>
+          <br>
+          <a href="/update/{{room.id}}">Update</a>
+        </td>
+      </tr>
+      {%endfor%}
+    </table>
+    {%endif%}
 </body>
+
+
 <script>
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
