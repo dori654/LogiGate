@@ -12,19 +12,16 @@
 <body>
   <h3>User Management</h3>
   {%for data in users_db%}
-  <p> {{data.name}}</p>
-  <p> {{data.password}}</p>
-
+  {{data.name}} ,{{data.last}}
+   {{data.password}}
   <a href="/delete/{{data.id}}">delete</a>
+  <form method="post" action="/update/{{data.id}}">
+    <input name="name" for="name" placeholder="Please type new name here.." />
+    <button id="myBtn1" onclick="">Update</button>
+  </form>
+  <br>
   {%endfor%}
-  <input id="myInput" placeholder="Please type here.." />
-  <button id="myBtn1" onclick="">Add User</button>
-  <button id="myBtn2" onclick="">Remove User</button>
-  <button id="myBtn3" onclick="">Edit User</button>
-  <script>
-    function myfun() { }
 
-  </script>
 </body>
 
 </html>

@@ -86,5 +86,19 @@ def register():
     return render_template('register.html')
 
 
+@app.route('/update/<int:id>', methods=['GET','POST'])
+def update(id):
+    data = User.query.get(id)
+    if request.method == "POST":
+        data.name = request.form['name']
+        try:
+            db.session.commit()
+            return redirect('/dashboard1.html')
+        except:
+            return "There was a problem udating that user"
+    else:
+        return render_template('Bad Username')
+    return redirect('/dashboard3.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
