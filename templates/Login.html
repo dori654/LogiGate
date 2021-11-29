@@ -13,36 +13,25 @@
 </head>
 
 <body>
-  {% for user in users_db %}
-  <p> {{user.content}}</p>
-  <p> {{user.name}}</p>
-  {% endfor %}
-  <center>
-    <p>
-    <h2><b>Log In</b></h2>
-    </p>
 
-    <form action="/action_page.php" method="post">
-      <div class="imgcontainer"></div>
+  <p style="text-align: center;">
+  <h2><b>Log In</b></h2>
+  </p>
 
-      <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required />
+  <form action="/signin" method="post">
+    <div class="container">
+      <label for="name"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="name" required />
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required />
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required />
 
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me
-        </label>
-      </div>
-  </center>
-  <div class="container" style="background-color: #f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+      <button type="submit">Login</button>
+    </div>
+    <div class="container" style="background-color: #f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
   </form>
 </body>
 
