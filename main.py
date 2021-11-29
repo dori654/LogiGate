@@ -61,7 +61,7 @@ def signin():
         if user.user_type == 'director':
             return render_template('/dashboard1.html', users_db=User.query.all())
     else:
-        return redirect('Bad Username')
+        return render_template('Bad Username')
 
 
 @app.route('/game/')
@@ -74,13 +74,12 @@ def erase(id):
     data = User.query.get(id)
     db.session.delete(data)
     db.session.commit()
-    return redirect('/Login')
+    return redirect('/dashboard3.html')
 
 
 @app.route('/Login/', methods=['GET', 'POST'])
 def login():
-    users_db = User.query.all()
-    return render_template('Login.html', users_db=users_db)
+    return render_template('Login.html')
 
 
 @app.route('/register.html/', methods=['GET', 'POST'])
