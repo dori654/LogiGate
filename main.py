@@ -7,7 +7,6 @@ app = Flask(__name__, static_url_path="")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db/database.db'
 db = SQLAlchemy(app)
 
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
@@ -19,7 +18,23 @@ class User(db.Model):
     address = db.Column(db.String(80))
 
     def __repr__(self):
-        return '<User %r>' % self.id
+        return '<User %r>' % (self.id)
+
+class Activity(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+
+    def __repr__(self):
+        return '<Activity %r>' % (self.id)
+
+
+@app.route('/activity', methods=['GET','POST'])
+def new_activity():
+    name = request.form['act']
+    act = Activity(name=name)
+    db.session.add(act)
+    db.session.commit()
+    return "Added Activity"
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -58,7 +73,7 @@ def signin():
         if user.user_type == 'student':
             return render_template('/dashboard3.html')
         if user.user_type == 'teacher':
-            return render_template('/dashboard2.html', rooms=Room.query.all())
+            return render_template('/dashboard2.html', rooms=Room.query.all(), activity = Activity.query.all())
         if user.user_type == 'director':
             return render_template('/dashboard1.html', users_db=User.query.all())
     else:
@@ -134,7 +149,7 @@ def update(id):
             db.session.commit()
             return redirect('/dashboard1.html')
         except:
-            return "There was a problem udating that user"
+            return "There was a problem updating that user"
     else:
         return render_template('Bad Username')
     return redirect('/dashboard3.html')
@@ -142,3 +157,5 @@ def update(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+

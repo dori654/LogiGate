@@ -40,14 +40,39 @@
         <td>{{room.description}}</td>
         <td>{{room.users}}</td>
         <td>
-          <a href="/deleter/{{room.id}}">Delete</a>
+          <a href="/deleter/{{Activity.id}}">Delete</a>
           <br>
-          <a href="/update/{{room.id}}">Update</a>
+          <a href="/update/{{Activity.id}}">Update</a>
         </td>
       </tr>
       {%endfor%}
     </table>
     {%endif%}
+
+<!--  Activity-->
+  <form action="/activity" method="post">
+    <label for="act">Assign to activity:</label>
+    <input type="text" name="act" id="act"  required />
+    <button type="submit">Add</button>
+
+  </form>
+  {% if activity|length < 1 %} <p>No mission created</p>
+    {%else%}
+    <table>
+      <tr>
+        <th>Activity Description</th>
+        <th>Activity users</th>
+      </tr>
+      {% for a in activity %}
+      <tr>
+        <td>{{a.name}}</td>
+        <td>{{a.users}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    {%endif%}
+
+
 </body>
 
 
