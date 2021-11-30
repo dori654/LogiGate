@@ -2,17 +2,32 @@
 
 # https://dori654.github.io/LogiGate/
 
-Project description:
+Contact information:
+leon44ml@gmail.com		- Leon	Yarovinski
+Matandaniel123@gmail.com	- Matan Daniel
+Dani.grunin@gmail.com		- Daneil Grunin
+dorifo@ac.sce.ac.il		- Dori Fourer
 
-LogiGate platform is a system which enables users from all around the globe to try a new logic gates simmulator designed for
-Computer Architecture basics.
+Description:
+A logic gate simulator. HTML website with python backend.
 
-We would like to try and improve the level of solutions and the efficiency in logical problems and expend people's knowledge.
+Environment:
+Python interpreter, Web Browser
 
-We give access to people who does not necessarily know Hebrew and we try to provide them with high level subtitles and expanding the
-user usage.
+Requirements:
+Required python packages: [Flask], [Flask-SQLAlchemy]
 
-We also want to make the platform more accessible for Exact Sciences degrees, and to improve their curriculum fields.
 
-The project's goal is to break out with new head on versions that would be able to represent the system and describe our goals
-correctly.
+How to Run Your Program:
+1. Make sure database.db is located under [db] folder
+2. Import the required python packages
+3. Run main.py
+4. Copy the IP adress from the console output when the server loads (should be 127.0.0.1:5000)
+5. Use the IP address in a web browser to view the website.
+
+In case the database does not exist:
+1. Use python console inside the folder environment
+2. >>> from main import db
+3. >>> db.create_all()
+
+##IMPORTANT: When performing actions such as adding users, activities or else, make sure to go back one page and refresh it.
