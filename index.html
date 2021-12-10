@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,31 +10,81 @@
     <title>LogiGate</title>
     <link rel="stylesheet" href="Styles/index_style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/sidebar/css/style.css">
+
+
 </head>
 
 <body>
 
-    <body>
-        <div class="header">
-            <h1>LogiGate</h1>
-            <p>Boolean algebra and logic circuit simulator</p>
-        </div>
+    <div class="header">
+        <h1>LogiGate</h1>
+        <p>Boolean algebra and logic circuit simulator</p>
+    </div>
 
-        <div class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="game.html">Tutorial</a>
-            <a href="/Dashboards/carousel/index.html">Dashboard</a>
-            <a href="register.html" class="right">Sign Up</a>
-            <a href="Login.html" class="right">Sign In</a>
-        </div>
+    <div class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="game.html">Tutorial</a>
+        <a href="/Dashboards/carousel/index.html">Dashboard</a>
+        <a href="register.html" class="right">Sign Up</a>
+        <a href="Login.html" class="right">Sign In</a>
+    </div>
 
-        <!-- YOUR CODE HERE -->
-        <div class="footer">
-            <h2>Facebook</h2>
-            <h2>Twitter</h2>
-            <h2>Instagram</h2>
-        </div>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
+                    <h3>Catriona Henderson</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-download mr-3 notif"><small
+                                class="d-flex align-items-center justify-content-center">5</small></span> Download</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-gift mr-3"></span> Gift Code</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-trophy mr-3"></span> Top Review</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-support mr-3"></span> Support</a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                </li>
+            </ul>
 
-    </body>
+        </nav>
+
+    </div>
+
+
+
+    <!-- YOUR CODE HERE -->
+    <div class="footer">
+        <h2>Facebook</h2>
+        <h2>Twitter</h2>
+        <h2>Instagram</h2>
+    </div>
+    <script src="/sidebar/js/jquery.min.js"></script>
+    <script src="/sidebar/js/popper.js"></script>
+    <script src="/sidebar/js/bootstrap.min.js"></script>
+    <script src="/sidebar/js/main.js"></script>
+</body>
 
 </html>
