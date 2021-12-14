@@ -91,5 +91,20 @@ body {
     /* capped corners */
     border-radius: 10px;
   }
+
+  h4{
+    font-family:"Lucida Console", "Courier New", monospace;
+    color: white;
+  }
+ .btn-secondary{
+   font: 1.2em sans-serif;
+    color:rgb(228, 171, 15);
+    background-color: #29323c;
+  }
+  .btn-help{
+   font: 1.2em sans-serif;
+    color:rgb(228, 15, 15);
+    background-color: #29323c;
+  }
   
   

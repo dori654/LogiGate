@@ -115,3 +115,24 @@ body {
 div.footer {
   background: linear-gradient(60deg, #8e98f7, rgb(84, 8, 59) 160%);
 }
+
+#sidebar .custom-menu .btn.btn-primary:after {
+  content: "";
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "FontAwesome";
+  color: rgb(146, 9, 9);
+}
+#sidebar .custom-menu .btn.btn-primary:after, #sidebar .custom-menu .btn.btn-primary:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "FontAwesome";
+  color: rgb(146, 9, 9);
+}
