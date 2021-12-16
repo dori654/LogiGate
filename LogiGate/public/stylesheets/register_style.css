@@ -1,0 +1,11 @@
+#success_message {
+  display: none;
+}
+body {
+  background: linear-gradient(230deg, #14d2e0 0%, rgb(97, 95, 96) 80%);
+}
+h2 {
+  font-size: 50px;
+  color: #f0f8ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
