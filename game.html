@@ -1,61 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>LogicGate</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Drag Drop Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Load CSS library - aqua -->
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/alphardex/aqua.css/dist/aqua.min.css'>
-    <link rel="stylesheet" href="Styles/game_style.css">
+		<script type="text/javascript" src="Scripts/game_scripts/lz-string-1.3.3.js" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/tools.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/button.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/gate.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/wiregroup.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/wire.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/toolbar.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/saving.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/environment.js?v=3" ></script>
+		<script type="text/javascript" src="Scripts/game_scripts/main.js?v=3" ></script>
+	</head>
+	<body onresize="onResizeCanvas()">
+		<link rel="stylesheet" href="/Styles/game_style.css">
 
-</head>
-
-<body>
-    <div class="field">
-        <div class="container" id="blocks">
-            <svg class="lines" width="500" height="500">
-                <line class="wire" id="l1" x1="0" y1="0" x2="500" y2="500" stroke="black" stroke-width="5" />
-                <!-- <line x1="0" y1="500" x2="500" y2="0" stroke="black" stroke-width="1" /> -->
-            </svg>
-
-            <!-- <div class="block draggable" data-id="1">
-                <div class="input"></div>
-                <span class="gate">AND</span>
-                <div class="input"></div>
-                <div class="output"></div>
-            </div> -->
-        </div>
-
-    </div>
-
-    <!-- SVG streches on whole screen -->
-    <div>
-
-    </div>
-    <!--Save Button-->
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Save</button>
-        <button type="button" class="btn btn-secondary">Edit</button>
-        <button type="button" class="btn btn-secondary">Reset</button>
-        <button type="button" class="btn btn-help">Help</button>
-    </div>
-    <!--Description Area-->
-    <h4>Description Area </h4>
-
-    <div class="input-group">
-        <div class="input-group-prepend">
-
-            <span class="input-group-text"></span>
-        </div>
-        <textarea class="form-control" aria-label="With textarea"></textarea>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="Scripts/input.js"></script>
-    <script src="Scripts/shapes.js"></script>
-    <script src='https://cdn.bootcdn.net/ajax/libs/draggabilly/2.3.0/draggabilly.pkgd.min.js'></script>
-    <script src="Scripts/main.js"></script>
-</body>
-
+		<canvas id="canvas">
+			Sorry! LogicSim requires a browser that supports HTML5 Canvas.
+		</canvas>
+	</body>
 </html>
