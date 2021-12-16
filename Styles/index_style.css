@@ -1,19 +1,27 @@
+.title {
+  font-size: 50px;
+  color: #f0f8ff;
+  font-weight: shadow-multiple;
+  font-family: fantasy;
+}
+
 * {
   box-sizing: border-box;
 }
 
 /* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.body {
+  height: auto;
+  width: auto;
   margin: 0;
-  background-color: rgb(161, 161, 161);
+  background: linear-gradient(230deg, #14d2e0 0%, rgb(97, 95, 96) 80%);
 }
 
 /* Header/logo Title */
 .header {
   padding: 10px;
   text-align: center;
-  background: linear-gradient(60deg, #8e98f7, rgb(84, 8, 59) 100%);
+  background: linear-gradient(230deg, #14d2e0 0%, rgb(97, 95, 96) 80%);
   color: white;
 }
 
@@ -112,6 +120,30 @@ body {
     width: 100%;
   }
 }
-div.footer {
-  background: linear-gradient(60deg, #8e98f7, rgb(84, 8, 59) 160%);
+.footer {
+  background: linear-gradient(230deg, #14d2e0 0%, rgb(97, 95, 96) 80%);
+  color: white;
+  font-size: 10px;
+}
+
+#sidebar .custom-menu .btn.btn-primary:after {
+  content: "";
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "FontAwesome";
+  color: rgb(146, 9, 9);
+}
+#sidebar .custom-menu .btn.btn-primary:after,
+#sidebar .custom-menu .btn.btn-primary:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: "FontAwesome";
+  color: rgb(146, 9, 9);
 }
