@@ -12,6 +12,6 @@
 - Make sure nodemon is installed on your computer: ```npm install nodemon --g```
 - Navigate to the project folder ```cd LogiGate```
 - On every launch use ```npm run dev```
-
+- Open ```localhost:3000``` inside a web browser
 
 
