@@ -78,3 +78,7 @@ span.psw {
 body {
   background: linear-gradient(230deg, #14d2e0 0%, rgb(97, 95, 96) 80%);
 }
+.rating-header {
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
