@@ -1,27 +1,27 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
 });
 
-router.get('/Login', function (req, res) {
-  res.render('login', {
-    title: 'Login page'
+router.get("/Login", function (req, res) {
+  res.render("login", {
+    title: "Login page",
   });
-})
+});
 
-router.get('/Register', function (req, res) {
-  res.render('register');
-})
+router.get("/Register", function (req, res) {
+  res.render("register");
+});
 
-router.get('/Game', function (req, res) {
-  res.render('game');
-})
+router.get("/Game", function (req, res) {
+  res.render("game");
+});
 
-router.get('/Dashboards', function (req, res) {
-  res.render('../Dashboards/carousel/index');
-})
+router.get("/Dashboards", function (req, res) {
+  res.render("../Dashboards/carousel/index");
+});
 
 module.exports = router;
