@@ -15,3 +15,19 @@
 - Open ```localhost:3000``` inside a web browser
 
 
+
+## Files:
+```bash
+📦LogiGate
+ ┣ 📂bin                # Node.js bin folder
+ ┣ 📂Dashboards         # Dashboards folder
+ ┣ 📂public             # Public folder (scripts, stylesheets, images, etc.)
+ ┃ ┣ 📂game_scripts     # Game scripts folder
+ ┃ ┣ 📂images           # Images folder
+ ┃ ┣ 📂javascripts      # JavaScripts folder
+ ┃ ┣ 📂sidebar          # Sidebar folder
+ ┃ ┗ 📂stylesheets      # Stylesheets (css) folder
+ ┣ 📂routes             # Routes folder (route files of node) 
+ ┣ 📂views              # Views folder (html/hbs files)
+ -
+```

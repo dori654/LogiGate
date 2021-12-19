@@ -20,8 +20,8 @@ router.get('/Game', function (req, res) {
   res.render('game');
 })
 
-router.get('/Dashboard', function (req, res) {
-  res.render('../Dashboards/carousel');
+router.get('/Dashboards', function (req, res) {
+  res.render('../Dashboards/carousel/index');
 })
 
 module.exports = router;
