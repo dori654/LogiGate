@@ -31,3 +31,8 @@
  ┣ 📂views              # Views folder (html/hbs files)
  -
 ```
+
+
+## Database:
+Username: ```Team1```
+Password: ```1234567z```
