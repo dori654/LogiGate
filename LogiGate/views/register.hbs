@@ -12,27 +12,27 @@
 <article class="card-body mx-auto" style="max-width: 400px;">
 	<h4 class="card-title mt-3 text-center">Create Account</h4>
 
-	<form>
+	<form action="/Register" method="POST">
 	<div class="form-group input-group">
 		<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 		 </div>
 
-        <input name="" class="form-control" placeholder="Full name" type="text">
+        <input name="f_name" id="f_name" class="form-control" placeholder="Full name" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
 		 </div>
 
-  <input name="" class="form-control" placeholder="ID" type="number">
+  <input name="ID" id="ID" class="form-control" placeholder="ID" type="number">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 		 </div>
 
-        <input name="" class="form-control" placeholder="Email address" type="email">
+        <input name="email" id="email" class="form-control" placeholder="Email address" type="email">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
@@ -45,13 +45,13 @@
 		    <option value="2">+198</option>
 		    <option value="3">+701</option>
 		</select>
-    	<input name="" class="form-control" placeholder="Phone number" type="text">
+    	<input name="phone" id="phone" class="form-control" placeholder="Phone number" type="text">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-building"></i> </span>
 		</div>
-		<select class="form-control">
+		<select class="form-control" id="role" name="role">
 
 			<option selected=""> Select job type</option>
 			<option>Teacher</option>
@@ -63,7 +63,7 @@
     	<div class="input-group-prepend">
 		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 		</div>
-        <input class="form-control" placeholder="Create password" type="password">
+        <input class="form-control" name="password" id="password" placeholder="Create password" type="password">
     </div> <!-- form-group// -->
     <div class="form-group input-group">
     	<div class="input-group-prepend">
