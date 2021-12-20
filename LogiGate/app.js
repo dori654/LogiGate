@@ -42,14 +42,15 @@ app.post("/Login", (req, res) => {
       if (err) {
         throw err;
       }
+
       pass = collection.password;
       console.log(pass);
       console.log(password);
       console.log("Record found Successfully");
       if (pass == password) {
-        return res.redirect("login_success.html");
+        res.render("login_success");
       } else {
-        return res.redirect("unsuccess.html");
+        res.render("unsuccess");
       }
     }
   );
@@ -96,6 +97,7 @@ app.post("/Register", (req, res) => {
   });
 
   res.render("signup_success");
+  return res.render("index");
 });
 
 module.exports = app;
