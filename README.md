@@ -13,7 +13,7 @@
 - Navigate to the project folder `cd LogiGate`
 
 - For Database install msi MongoDB from : https://www.mongodb.com/try/download/community
-  -Create db folder inside MongoDB folder
+- Create db folder inside MongoDB folder
 - enter to MongoDB - 'mongodb://localhost:27017/mydb'
 
 - On every launch use `npm run dev`

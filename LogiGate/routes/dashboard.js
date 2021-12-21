@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-const mongoose = require("mongoose");
 
 router.get("/dashboard", function (req, res) {
   res.render("dashboard", {
