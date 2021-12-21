@@ -56,6 +56,8 @@ app.post("/Login", (req, res) => {
   );
 });
 
+
+
 //Statics
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/Dashboards", express.static(path.join(__dirname, "Dashboards"))); //Register dashboard folder as static folder
@@ -89,12 +91,30 @@ app.post("/Register", (req, res) => {
     role: role,
   };
 
-  db.collection("users").insertOne(data, (err, collection) => {
-    if (err) {
-      throw err;
-    }
-    console.log("Record Inserted Successfully");
-  });
+  if(role == "Student"){
+    db.collection("dashboard_s").insertOne(data, (err, collection) => {
+      if (err) {
+        throw err;
+      }
+      console.log("Record Inserted Successfully");
+    });
+  }
+  else if(role == "Teacher"){
+    db.collection("dashboard_t").insertOne(data, (err, collection) => {
+      if (err) {
+        throw err;
+      }
+      console.log("Record Inserted Successfully");
+    });
+  }
+  else if(role == "Director"){
+    db.collection("dashboard_d").insertOne(data, (err, collection) => {
+      if (err) {
+        throw err;
+      }
+      console.log("Record Inserted Successfully");
+    });
+  }
 
   res.render("signup_success");
   return res.render("index");
