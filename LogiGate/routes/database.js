@@ -3,25 +3,14 @@ const router = express.Router();
 const path = require("path");
 const mongoose = require("mongoose");
 
+const userModel = require("../models/user");
+
 var db = mongoose.connection;
 
 router.post("/Register", (req, res) => {
-    var f_name = req.body.f_name;
-    var email = req.body.email;
-    var ID = req.body.ID;
-    var phone = req.body.phone;
-    var password = req.body.password;
-    var role = req.body.role;
-
-    var data = {
-        name: f_name,
-        email: email,
-        id: ID,
-        password: password,
-        phone: phone,
-        role: role,
-    };
-
+    const user = new userModel(req.body.name, req.body.email, req.body.id, req.body.password, req.body.phone, req.body.role);
+    user.save();
+    //TODO: User save unfinished
     if (role == "Student") {
         db.collection("dashboard_s").insertOne(data, (err, collection) => {
             if (err) {
