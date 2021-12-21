@@ -3,7 +3,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 
 var db = mongoose.connection;
 
@@ -13,9 +12,6 @@ var usersRouter = require("./routes/users");
 var dashboardRouter = require("./routes/dashboard");
 const { hasSubscribers } = require("diagnostics_channel");
 
-var app = express();
-
-app.use(bodyParser.json());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,14 +24,15 @@ app.use(
 
 db.on("error", () => console.log("Error in Connecting to Database"));
 db.once("open", () => console.log("Connected to Database"));
+
 app.post("/Login", (req, res) => {
   var id = req.body.id;
   var password = req.body.password;
   var pass;
-
-  db.collection("dashboard_s").findone(
+  const dbFiles = ["dashboard_s", "dashboard_t", "dashboard_d"];
+  db.collection(dbFiles).findOne(
     {
-      ID: id
+      ID: id,
     },
     (err, collection) => {
       if (err) {
@@ -54,8 +51,6 @@ app.post("/Login", (req, res) => {
     }
   );
 });
-
-
 
 //Statics
 app.use(express.static(path.join(__dirname, "public")));
@@ -90,23 +85,21 @@ app.post("/Register", (req, res) => {
     role: role,
   };
 
-  if(role == "Student"){
+  if (role == "Student") {
     db.collection("dashboard_s").insertOne(data, (err, collection) => {
       if (err) {
         throw err;
       }
       console.log("Record Inserted Successfully");
     });
-  }
-  else if(role == "Teacher"){
+  } else if (role == "Teacher") {
     db.collection("dashboard_t").insertOne(data, (err, collection) => {
       if (err) {
         throw err;
       }
       console.log("Record Inserted Successfully");
     });
-  }
-  else if(role == "Director"){
+  } else if (role == "Director") {
     db.collection("dashboard_d").insertOne(data, (err, collection) => {
       if (err) {
         throw err;
@@ -120,4 +113,3 @@ app.post("/Register", (req, res) => {
 });
 
 module.exports = app;
-
