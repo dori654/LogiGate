@@ -28,15 +28,14 @@ app.use(
 
 db.on("error", () => console.log("Error in Connecting to Database"));
 db.once("open", () => console.log("Connected to Database"));
-
 app.post("/Login", (req, res) => {
   var id = req.body.id;
   var password = req.body.password;
   var pass;
 
-  db.collection("users").findOne(
+  db.collection("dashboard_s").findone(
     {
-      ID: id,
+      ID: id
     },
     (err, collection) => {
       if (err) {
@@ -121,3 +120,4 @@ app.post("/Register", (req, res) => {
 });
 
 module.exports = app;
+

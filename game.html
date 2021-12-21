@@ -20,8 +20,11 @@
 		<canvas id="canvas">
 			Sorry! LogicSim requires a browser that supports HTML5 Canvas.
 		</canvas>
+		<form action="/rate" method = "post">
 		<label for=""Comment">Leave a comment on how we can improve:</label>
-		<textarea id="Comment Section" cols="30" rows="10">~Comment here!~</textarea>
+		<textarea id="Comment Section" cols="30" rows="10"></textarea>
+		<input class="btn btn-primary" type="submit" value="Submit">
+	</form>
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -71,5 +74,6 @@
 		}));
 	});
 	</script>
+	</form>
 	</body>
 </html>
