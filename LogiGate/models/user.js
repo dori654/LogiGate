@@ -2,7 +2,6 @@
 var { Schema, model } = require("mongoose");
 
 var userSchema = new Schema({
-    uuid: Number,
     name: String,
     email: String,
     id: String,
@@ -11,4 +10,4 @@ var userSchema = new Schema({
     role: String,
 });
 
-module.exports = model('User', userSchema);
+module.exports = model('User', userSchema, "Users");

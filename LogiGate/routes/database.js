@@ -8,34 +8,19 @@ const userModel = require("../models/user");
 var db = mongoose.connection;
 
 router.post("/Register", (req, res) => {
-    const user = new userModel(req.body.name, req.body.email, req.body.id, req.body.password, req.body.phone, req.body.role);
+    db.collection("Users").findOne({ id: req.body.ID }, (err, obj) => {
+        if (obj) return res.status(400).send("User already exists");
+    });
+    const user = new userModel({
+        name: req.body.f_name,
+        email: req.body.email,
+        id: req.body.ID,
+        password: req.body.password,
+        phone: req.body.phone,
+        role: req.body.role
+    });
     user.save();
-    //TODO: User save unfinished
-    if (role == "Student") {
-        db.collection("dashboard_s").insertOne(data, (err, collection) => {
-            if (err) {
-                throw err;
-            }
-            console.log("Record Inserted Successfully");
-        });
-    }
-    else if (role == "Teacher") {
-        db.collection("dashboard_t").insertOne(data, (err, collection) => {
-            if (err) {
-                throw err;
-            }
-            console.log("Record Inserted Successfully");
-        });
-    }
-    else if (role == "Director") {
-        db.collection("dashboard_d").insertOne(data, (err, collection) => {
-            if (err) {
-                throw err;
-            }
-            console.log("Record Inserted Successfully");
-        });
-    }
-
+    db.collection("Users").insertOne(user);
     res.render("signup_success");
 });
 
