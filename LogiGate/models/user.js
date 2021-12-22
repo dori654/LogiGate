@@ -1,13 +1,37 @@
 //user mongoose model
 var { Schema, model } = require("mongoose");
+var mongoose = require("mongoose");
 
 var userSchema = new Schema({
-    name: String,
-    email: String,
-    id: String,
-    password: String,
-    phone: String,
-    role: String,
+    name: {
+        type: String,
+        unique: false
+    },
+    email: {
+        type: String,
+        unique: false
+    },
+    user_id: {
+        type: String,
+        unique: true
+    },
+    password: {
+        type: String,
+        unique: false
+    },
+    phone: {
+        type: String,
+        unique: false
+    },
+    role: {
+        type: String,
+        unique: false
+    }
 });
 
-module.exports = model('User', userSchema, "Users");
+userSchema.plugin(require('mongoose-beautiful-unique-validation'));
+
+const userModel = mongoose.model('User', userSchema);
+
+module.exports = userModel;
+// module.exports = model('User', userSchema, "Users");

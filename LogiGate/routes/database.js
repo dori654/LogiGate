@@ -8,20 +8,28 @@ const userModel = require("../models/user");
 var db = mongoose.connection;
 
 router.post("/Register", (req, res) => {
-    db.collection("Users").findOne({ id: req.body.ID }, (err, obj) => {
-        if (obj) return res.status(400).send("User already exists");
+    //find duplicate ID
+    userModel.findOne({ user_id: req.body.ID }, (err, user) => {
+        if (err)
+            console.log(err);
+        else {
+            if (user)
+                return res.render('message', { message: "ID already exists" });
+            else {
+                const user = new userModel({
+                    name: req.body.f_name,
+                    email: req.body.email,
+                    user_id: req.body.ID,
+                    password: req.body.password,
+                    phone: req.body.phone,
+                    role: req.body.role
+                });
+                user.save();
+                db.collection("Users").insertOne(user);
+                res.render("message", { message: "Registration Successful" });
+            }
+        }
     });
-    const user = new userModel({
-        name: req.body.f_name,
-        email: req.body.email,
-        id: req.body.ID,
-        password: req.body.password,
-        phone: req.body.phone,
-        role: req.body.role
-    });
-    user.save();
-    db.collection("Users").insertOne(user);
-    res.render("signup_success");
 });
 
 router.post("/Login", (req, res) => {
