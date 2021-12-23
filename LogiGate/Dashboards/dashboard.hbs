@@ -3,18 +3,17 @@
         {{> dashboard_sidebar }}
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Student Dashboard</h1>
+            <h1 class="page-header">Dashboard</h1>
 
 
-            <h2 class="sub-header">Section title</h2>
+            <h2 class="sub-header">Users:</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>First Name</th>
+                            <th>ID</th>
                             <th>Phone</th>
                             <th>Password</th>
                             <th>Options</th>
@@ -22,16 +21,17 @@
                     </thead>
                     <tbody>
 
-
+                        {{#each students}}
                         <tr>
-                            <td>1,001</td>
-                            <td>Dori</td>
-                            <td>Fourer</td>
-                            <td>315614516</td>
-                            <td>0525454880</td>
-                            <td>sausagePassion</td>
-                            <td><a>Edit</a> | <a>Remove</a></td>
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{user_id}}</td>
+                            <td>{{email}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{password}}</td>
+                            <td><a href="edit/{{_id}}">Edit</a> | <a href="remove/{{_id}}">Remove</a></td>
                         </tr>
+                        {{/each}}
 
                     </tbody>
                 </table>
