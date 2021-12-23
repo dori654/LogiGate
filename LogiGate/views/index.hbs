@@ -23,55 +23,58 @@
     <div class="navbar">
         <a href="/" class="active">Home</a>
         <a href="/Game">Game</a>
-        <a href="/Dashboards">Dashboard</a>
+        <a href="Dashboards/dashboard">Dashboard</a>
+        {{#if user}}
+        <a class="right"> Welcome {{user}} </a>
+        {{else}}
         <a href="/Register" class="right">Sign Up</a>
         <a href="/Login" class="right">Sign In</a>
+        {{/if}}
         <a href="/images/Tutorial.jpg"> Tutorial</a>
     </div>
 
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                </button>
-            </div>
-            <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
-                <div class="user-logo">
-                    <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
-                    {{#if user}}
-                    <h3>{{user}}</h3>
-                    {{else}}
-                    <h3>Guest</h3>
-                    {{/if}}
-                </div>
-            </div>
-            <ul class="list-unstyled components mb-5">
-                <li class="active">
-                    <a href="/Game"><span class="fa fa-home mr-3"></span>New Task</a>
-                </li>
-                <li class="active">
-                    <a href="#"><span class="fa fa-home mr-3"></span>Connect with Teachers</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-gift mr-3"></span>Edit Task</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-trophy mr-3"></span>New Group</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-support mr-3"></span>Support</a>
-                </li>
-                <li>
-                    <a href="/signoff"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
-                </li>
-            </ul>
 
-        </nav>
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            </button>
+        </div>
+        <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
+            <div class="user-logo">
+                <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
+                {{#if user}}
+                <h3>{{user}}</h3>
+                {{else}}
+                <h3>Guest</h3>
+                {{/if}}
+            </div>
+        </div>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="/Game"><span class="fa fa-home mr-3"></span>New Task</a>
+            </li>
+            <li class="active">
+                <a href="#"><span class="fa fa-home mr-3"></span>Connect with Teachers</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-gift mr-3"></span>Edit Task</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-trophy mr-3"></span>New Group</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-support mr-3"></span>Support</a>
+            </li>
+            <li>
+                <a href="/signoff"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+            </li>
+        </ul>
 
-    </div>
+    </nav>
+
 
 
 

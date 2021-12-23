@@ -4,6 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const session = require('express-session');
 const userModel = require("../models/user");
+const loggerModel = require("../models/log");
 
 var db = mongoose.connection;
 
@@ -24,8 +25,15 @@ router.post("/Register", (req, res) => {
                     phone: req.body.phone,
                     role: req.body.role
                 });
+                const log = new loggerModel({
+                    user_id: req.body.ID,
+                    action: "Register"
+                });
                 user.save();
-                db.collection("Users").insertOne(user);
+                log.save();
+                db.collection("users").insertOne(user);
+                db.collection("logs").insertOne(log);
+
                 res.render("message", { message: "Registration Successful" });
             }
         }
@@ -40,6 +48,7 @@ router.post('/Login', (request, response) => {
             if (data) {
                 request.session.loggedin = true;
                 request.session.username = data.name;
+                request.session.user_id = data.user_id;
                 console.log(request.session.username);
                 response.render("message", { message: "Login Successful" });
             } else {
