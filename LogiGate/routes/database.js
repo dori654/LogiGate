@@ -32,50 +32,43 @@ router.post("/Register", (req, res) => {
     });
 });
 
-// router.post("/Login", (req, res) => {
-//     var id = req.body.id;
-//     var password = req.body.password;
-//     var pass;
 
-//     db.collection("dashboard_s").findone(
-//         {
-//             ID: id
-//         },
-//         (err, collection) => {
-//             if (err) {
-//                 throw err;
-//             }
 
-//             pass = collection.password;
-//             console.log(pass);
-//             console.log(password);
-//             console.log("Record found Successfully");
-//             if (pass === password) {
-//                 res.render("login_success");
+// router.post('/Login', (req, res) => {
+//     userModel.findOne({ user_id: req.body.ID }, (err, data) => {
+//         if (data) {
+
+//             if (data.password == req.body.password) {
+//                 req.session.user_id = data.session.user_id;
+//                 res.render("message", { message: "Login Successful" });
 //             } else {
-//                 res.render("unsuccess");
+
+//                 res.render("message", { message: "Incorrect Password" });
 //             }
+//         } else {
+//             res.render("message", { message: "User Not Found" });
 //         }
-//     );
+//     });
 // });
 
-router.post('/Login', (req, res) => {
-	userModel.findOne({ ID: req.body.ID }, (err, data) => {
-		if (data) {
-
-			if (data.password == req.body.password) {
-				req.session.user_id = data.session.user_id;
-				res.render("login_success");
+router.post('/Login', (request, response) => {
+    var username = request.body.ID;
+    var pass = request.body.password;
+    if (username && pass) {
+        userModel.findOne({ user_id: request.body.ID, password: pass }, (err, data) => {
+            if (data) {
+                request.session.loggedin = true;
+                request.session.username = data.name;
+                console.log(request.session.username);
+                response.render("message", { message: "Login Successful" });
             } else {
-                
-                res.render("message");
-			}
-		} else {
-            res.render("index");
-		}
-	});
+                response.render("message", { message: "Login Unsuccessful" });
+            }
+        });
+    } else {
+        response.render('message', { message: "Please enter Username and Password!" });
+    }
 });
-
 
 
 

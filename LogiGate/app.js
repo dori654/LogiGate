@@ -2,7 +2,8 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-
+var session = require('express-session');
+var bodyParser = require('body-parser');
 
 //Require route paths
 var indexRouter = require("./routes/index");
@@ -11,10 +12,21 @@ var dashboardRouter = require("./routes/dashboard");
 var databaseRouter = require("./routes/database");
 const { hasSubscribers } = require("diagnostics_channel");
 
+//request app
 var app = express();
 
+//app session
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+//app use libraries
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(logger("dev"));
-app.use(express.json());
+// app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 

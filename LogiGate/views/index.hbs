@@ -21,7 +21,7 @@
     </div>
 
     <div class="navbar">
-        <a href="#" class="active">Home</a>
+        <a href="/" class="active">Home</a>
         <a href="/Game">Game</a>
         <a href="/Dashboards">Dashboard</a>
         <a href="/Register" class="right">Sign Up</a>
@@ -38,7 +38,11 @@
             <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
                 <div class="user-logo">
                     <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
-                    <h3>Dori Fourer</h3>
+                    {{#if user}}
+                    <h3>{{user}}</h3>
+                    {{else}}
+                    <h3>Guest</h3>
+                    {{/if}}
                 </div>
             </div>
             <ul class="list-unstyled components mb-5">
