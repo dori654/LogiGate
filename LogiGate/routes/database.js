@@ -32,25 +32,6 @@ router.post("/Register", (req, res) => {
     });
 });
 
-
-
-// router.post('/Login', (req, res) => {
-//     userModel.findOne({ user_id: req.body.ID }, (err, data) => {
-//         if (data) {
-
-//             if (data.password == req.body.password) {
-//                 req.session.user_id = data.session.user_id;
-//                 res.render("message", { message: "Login Successful" });
-//             } else {
-
-//                 res.render("message", { message: "Incorrect Password" });
-//             }
-//         } else {
-//             res.render("message", { message: "User Not Found" });
-//         }
-//     });
-// });
-
 router.post('/Login', (request, response) => {
     var username = request.body.ID;
     var pass = request.body.password;
@@ -68,6 +49,11 @@ router.post('/Login', (request, response) => {
     } else {
         response.render('message', { message: "Please enter Username and Password!" });
     }
+});
+
+router.get('/signoff', (request, response) => {
+    request.session.destroy();
+    response.render('message', { message: "You have been signed off" });
 });
 
 
