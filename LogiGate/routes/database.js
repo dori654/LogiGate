@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const mongoose = require("mongoose");
-
+const session = require('express-session');
 const userModel = require("../models/user");
 
 var db = mongoose.connection;
@@ -32,32 +32,51 @@ router.post("/Register", (req, res) => {
     });
 });
 
-router.post("/Login", (req, res) => {
-    var id = req.body.id;
-    var password = req.body.password;
-    var pass;
+// router.post("/Login", (req, res) => {
+//     var id = req.body.id;
+//     var password = req.body.password;
+//     var pass;
 
-    db.collection("dashboard_s").findone(
-        {
-            ID: id
-        },
-        (err, collection) => {
-            if (err) {
-                throw err;
-            }
+//     db.collection("dashboard_s").findone(
+//         {
+//             ID: id
+//         },
+//         (err, collection) => {
+//             if (err) {
+//                 throw err;
+//             }
 
-            pass = collection.password;
-            console.log(pass);
-            console.log(password);
-            console.log("Record found Successfully");
-            if (pass === password) {
-                res.render("login_success");
+//             pass = collection.password;
+//             console.log(pass);
+//             console.log(password);
+//             console.log("Record found Successfully");
+//             if (pass === password) {
+//                 res.render("login_success");
+//             } else {
+//                 res.render("unsuccess");
+//             }
+//         }
+//     );
+// });
+
+router.post('/Login', (req, res) => {
+	userModel.findOne({ ID: req.body.ID }, (err, data) => {
+		if (data) {
+
+			if (data.password == req.body.password) {
+				req.session.user_id = data.session.user_id;
+				res.render("login_success");
             } else {
-                res.render("unsuccess");
-            }
-        }
-    );
+                
+                res.render("message");
+			}
+		} else {
+            res.render("index");
+		}
+	});
 });
+
+
 
 
 module.exports = router;
