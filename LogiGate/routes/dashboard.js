@@ -5,7 +5,7 @@ var userDB = require("../models/user");
 router.get("/dashboard", function (req, res) {
 
   userDB.find({}, function (err, foundUser) {
-    res.render("dashboard", {
+    res.render("../Dashboards/dashboard", {
       title: "Dashboard",
       layout: "dashboard_layout",
       students: foundUser

@@ -34,4 +34,3 @@ userSchema.plugin(require('mongoose-beautiful-unique-validation'));
 const userModel = mongoose.model('User', userSchema);
 
 module.exports = userModel;
-// module.exports = model('User', userSchema, "Users");

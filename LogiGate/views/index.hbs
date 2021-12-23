@@ -23,9 +23,13 @@
     <div class="navbar">
         <a href="/" class="active">Home</a>
         <a href="/Game">Game</a>
-        <a href="/Dashboards">Dashboard</a>
+        <a href="Dashboards/dashboard">Dashboard</a>
+        {{#if user}}
+        <a class="right"> Welcome {{user}} </a>
+        {{else}}
         <a href="/Register" class="right">Sign Up</a>
         <a href="/Login" class="right">Sign In</a>
+        {{/if}}
         <a href="/images/Tutorial.jpg"> Tutorial</a>
     </div>
 
@@ -72,7 +76,6 @@
         </nav>
 
     </div>
-
 
 
     <!-- YOUR CODE HERE -->

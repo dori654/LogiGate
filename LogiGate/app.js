@@ -11,6 +11,7 @@ var usersRouter = require("./routes/users");
 var dashboardRouter = require("./routes/dashboard");
 var databaseRouter = require("./routes/database");
 const { hasSubscribers } = require("diagnostics_channel");
+var loggerRouter = require("./routes/logger");
 
 //request app
 var app = express();
@@ -49,6 +50,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/Dashboards", dashboardRouter);
 app.use("/", databaseRouter);
+app.use("/", loggerRouter);
 
 module.exports = app;
 
