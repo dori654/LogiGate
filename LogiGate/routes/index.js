@@ -21,9 +21,4 @@ router.get("/Register", function (req, res) {
 router.get("/Game", function (req, res) {
   res.render("game");
 });
-
-router.get("/Dashboards", function (req, res) {
-  res.render("../Dashboards/carousel/index");
-});
-
 module.exports = router;
