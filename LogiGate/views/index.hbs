@@ -29,58 +29,91 @@
         <a href="/images/Tutorial.jpg"> Tutorial</a>
     </div>
 
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                </button>
-            </div>
-            <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
-                <div class="user-logo">
-                    <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
-                    {{#if user}}
-                    <h3>{{user}}</h3>
-                    {{else}}
-                    <h3>Guest</h3>
-                    {{/if}}
+
+
+
+
+
+    <div class="position-relative">
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    </button>
                 </div>
-            </div>
-            <ul class="list-unstyled components mb-5">
-                <li class="active">
-                    <a href="/Game"><span class="fa fa-home mr-3"></span>New Task</a>
-                </li>
-                <li class="active">
-                    <a href="#"><span class="fa fa-home mr-3"></span>Connect with Teachers</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-gift mr-3"></span>Edit Task</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-trophy mr-3"></span>New Group</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-support mr-3"></span>Support</a>
-                </li>
-                <li>
-                    <a href="/signoff"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
-                </li>
-            </ul>
+                <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
+                    <div class="user-logo">
+                        <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
+                        {{#if user}}
+                        <h3>{{user}}</h3>
+                        {{else}}
+                        <h3>Guest</h3>
+                        {{/if}}
+                    </div>
+                </div>
 
-        </nav>
 
+
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="/Game"><span class="fa fa-home mr-3"></span>New Task</a>
+                    </li>
+                    <li class="active">
+                        <a href="#"><span class="fa fa-home mr-3"></span>Connect with Teachers</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-gift mr-3"></span>Edit Task</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-trophy mr-3"></span>New Group</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-support mr-3"></span>Support</a>
+                    </li>
+                    <li>
+                        <a href="/signoff"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+    </div>
+
+
+    <div class="join-container">
+        <header class="join-header">
+            <h1><i class="fas fa-smile"></i> Space Invaders </h1>
+        </header>
+        <main class="join-main">
+            <form action="chat.html">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." required />
+                </div>
+                <div class="form-control">
+                    <label for="room">Room</label>
+                    <input type="text" name="room" id="room" placeholder="Enter Room id..." required />
+                </div>
+                <button type="submit" class="btn">Join Game</button>
+            </form>
+        </main>
     </div>
 
 
 
     <!-- YOUR CODE HERE -->
+
     <div class="footer">
         <h5>Facebook</h5>
         <h5>Twitter</h5>
         <h5>Instagram</h5>
     </div>
+
+
     <script src="/sidebar/js/jquery.min.js"></script>
     <script src="/sidebar/js/popper.js"></script>
     <script src="/sidebar/js/bootstrap.min.js"></script>
