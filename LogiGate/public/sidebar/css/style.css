@@ -75,7 +75,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 [tabindex="-1"]:focus {
@@ -97,6 +98,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  color: whitesmoke;
 }
 
 p {
@@ -1761,7 +1763,8 @@ pre code {
   border-bottom: 2px solid #dee2e6;
 }
 .table tbody + tbody {
-  border-top: 2px solid #dee2e6;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 .table-sm th,
@@ -1828,7 +1831,8 @@ pre code {
 .table-secondary td,
 .table-secondary thead th,
 .table-secondary tbody + tbody {
-  border-color: #b3b7bb;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 .table-hover .table-secondary:hover {
@@ -1836,13 +1840,15 @@ pre code {
 }
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
-  background-color: #c8cbcf;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 .table-success,
 .table-success > th,
 .table-success > td {
-  background-color: #c3e6cb;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 .table-success th,
@@ -2674,7 +2680,7 @@ textarea.form-control.is-invalid {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: transparent;
+  background-color: #f8f9fa;
   border: 1px solid transparent;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -3000,7 +3006,7 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 
-<!-- > .btn-outline-primary {
+.btn-outline-primary {
   color: #007bff;
   border-color: #007bff;
 }
@@ -9293,6 +9299,8 @@ a.text-dark:focus {
     size: a3;
   }
   body {
+    background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
     min-width: 992px !important;
   }
   .container {
@@ -9331,19 +9339,20 @@ a.text-dark:focus {
 }
 
 body {
+  background: linear-gradient(230deg, #14d2e0 0%,#333 50%);
   font-family: "Poppins", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fff;
-  color: gray;
+ 
 }
 
 a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
-  color: #2f89fc;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 a:hover,
 a:focus {
@@ -9379,18 +9388,18 @@ h5,
   line-height: 1.5;
   font-weight: 400;
   font-family: "Poppins", Arial, sans-serif;
-  color: #00;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+
 }
 
 .img {
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.wrapper {
-  width: 100%;
-}
+
 
 #sidebar {
   min-width: 300px;
@@ -9403,7 +9412,7 @@ h5,
   position: relative;
 }
 #sidebar .h6 {
-  color: #fff;
+  background: url('/LogiGate/public/sidebar/images/bg.jpg');
 }
 #sidebar.active {
   margin-left: -300px;
@@ -9428,7 +9437,7 @@ h5,
   color: #fff;
   display: block;
   padding: 10px 30px;
-  background: #155724;
+ 
 }
 
 #sidebar ul.components {
@@ -9466,12 +9475,12 @@ h5,
   font-size: 8px;
 }
 #sidebar ul li a:hover {
-  color: #fff;
-  background: #2f89fc;
+
+ 
   border-bottom: 1px solid #2f89fc;
 }
 #sidebar ul li.active > a {
-  background: transparent;
+ 
   color: #fff;
 }
 #sidebar ul li.active > a:hover {
@@ -9527,21 +9536,7 @@ h5,
 #sidebar .custom-menu .btn.btn-primary:after {
 }
 
-.bg-wrap {
-  width: 100%;
-  position: relative;
-  z-index: 0;
-}
-.bg-wrap:after {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  opacity: 0.3;
-}
+
 .bg-wrap .user-logo .img {
   width: 100px;
   height: 100px;
@@ -9550,7 +9545,7 @@ h5,
   margin-bottom: 10px;
 }
 .bg-wrap .user-logo h3 {
-  color: #fff;
+ 
   font-size: 18px;
 }
 
@@ -9584,7 +9579,7 @@ a[data-toggle="collapse"] {
 }
 
 .btn.btn-primary {
-  background: #2f89fc;
+ 
   border-color: #2f89fc;
 }
 .btn.btn-primary:hover,
@@ -9597,8 +9592,8 @@ a[data-toggle="collapse"] {
 
 .form-control {
   height: 40px !important;
-  background: #fff;
-  color: #000;
+ 
+
   font-size: 13px;
   border-radius: 4px;
   -webkit-box-shadow: none !important;

@@ -9,9 +9,13 @@ Saving.save = function()
     }
 
     var str = LZString.compressToBase64(JSON.stringify(obj));
-
+    
+    
+    alert("The following link copied to the clipboard:     " + str);
     window.open("data:text/plain;charset=UTF-8," + str, "_blank");
+    navigator.clipboard.writeText(str);
 }
+
 
 Saving.loadFromHash = function()
 {
