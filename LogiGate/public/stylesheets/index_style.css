@@ -1,3 +1,71 @@
+.widget-container{
+    width: 30%;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(0%, -250%);
+
+}
+
+.widget-container {
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    .widget-container.fluid-height {
+      height: auto;
+      min-height: 0; }
+    .widget-container.small {
+      min-height: 120px;
+      height: 200px; }
+    .widget-container.gallery {
+      min-height: 400px; }
+    .widget-container .heading {
+      background: rgba(255, 255, 255, 0.94);
+      height: 50px;
+      padding: 15px 15px;
+      color: #007aff;
+      font-size: 15px;
+      width: 100%;
+      font-weight: 400;
+      margin: 0; }
+      .widget-container .heading [class^="fa"], .widget-container .heading [class*="fa"] {
+        margin-right: 10px;
+        font-size: 14px; }
+        .widget-container .heading [class^="fa"].pull-right, .widget-container .heading [class*="fa"].pull-right {
+          margin-right: 0px;
+          margin-left: 15px;
+          opacity: 0.35;
+          font-size: 1.1em; }
+        .widget-container .heading [class^="fa"]:hover, .widget-container .heading [class*="fa"]:hover {
+          cursor: pointer;
+          opacity: 1; }
+    .widget-container .tabs {
+      background: whitesmoke;
+      border-bottom: 1px solid #dddddd; }
+    .widget-container .widget-content {
+      width: 100%; }
+   
+  
+  .padded {
+    padding: 15px; 
+   }
+  
+  
+  .list ul li {
+      padding: 10px 15px 12px 2px;
+      border-bottom: 1px solid #e2e2e2;
+      margin: 0;
+  }
+  
+  .list ul {
+      list-style: none;
+      padding-left: 15px;
+      margin: 0;
+  }
+
+
+
+
+
 .title {
   font-size: 50px;
   color: #f0f8ff;
@@ -10,7 +78,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-120%, -80%);
 }
 .btn{
   color: #f0f8ff;
