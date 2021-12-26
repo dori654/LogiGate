@@ -2,66 +2,172 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
-        integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
-    <!--<script src="js/game-bundle.min.js"></script>-->
-    <link rel="stylesheet" href="css/style.css">
-    <title>XD</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogiGate</title>
+    <link rel="stylesheet" href="stylesheets/index_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="/sidebar/css/style.css">
+
 </head>
 
 <body>
 
+    <div class="header">
+        <h1>LogiGate</h1>
+        <p>Boolean algebra and logic circuit simulator</p>
+    </div>
 
-    <div class="chat-container">
-        <div id="sketch-holder"></div>
-        <header class="chat-header" id="chat-header">
-            <h1><i class="fas fa-smile"></i> Space!</h1>
-            <a href="index" class="btn">Leave Room</a>
-        </header>
-        <main class="chat-main">
-            <div class="chat-sidebar">
-                <h3><i class="fas fa-comments"></i> Room Name:</h3>
-                <h2 id="room-name">JavaScript</h2>
-                <h3><i class="fas fa-users"></i> Users</h3>
-                <ul id="users"></ul>
-            </div>
-            <div class="chat-messages">
-                <!--<div class="message">
-						<p class="meta">Brad <span>9:12pm</span></p>
-						<p class="text">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-							repudiandae.
-						</p>
-					</div> -->
-            </div>
-        </main>
-        <div class="chat-form-container">
-            <form id="chat-form">
-                <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
-                <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
-            </form>
+    <div class="navbar">
+        <a href="/" class="active">Home</a>
+        <a href="/Game">Game</a>
+        <a href="../Dashboards/dashboard">Dashboard</a>
+        <a href="/Register" class="right">Sign Up</a>
+        <a href="/Login" class="right">Sign In</a>
+        <a href="/images/Tutorial.jpg"> Tutorial</a>
+    </div>
+
+
+
+
+
+
+    <div class="position-relative">
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    </button>
+                </div>
+                <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar/images/bg_1.jpg);">
+                    <div class="user-logo">
+                        <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
+                        {{#if user}}
+                        <h3>{{user}}</h3>
+                        {{else}}
+                        <h3>Guest</h3>
+                        {{/if}}
+                    </div>
+                </div>
+
+
+
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="/Game"><span class="fa fa-home mr-3"></span>New Task</a>
+                    </li>
+                    <li class="active">
+                        <a href="#"><span class="fa fa-home mr-3"></span>Connect with Teachers</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-gift mr-3"></span>Edit Task</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-trophy mr-3"></span>New Group</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-support mr-3"></span>Support</a>
+                    </li>
+                    <li>
+                        <a href="/signoff"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                    </li>
+                </ul>
+
+            </nav>
+
         </div>
     </div>
 
-    <!-- qs cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
-        integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME=" crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="js/main.js"></script>
-    <!-- <script src="Alien.js"></script>
-  <script src="Ship.js"></script>
-  <script src="Bomb.js"></script>
-  <script src="Explosion.js"></script> -->
-    <script src="js/game-bundle.min.js"></script>
-    <script src="sketch.js"></script>
 
+    <div class="join-container"></div>
+    <div class="container-to">
+        <header class="join-header">
+            <div class="col-md-8 col-md-offset-2 bootstrap snippets bootdeys">
+                <div class="widget-container scrollable list rollodex">
+                    <div class="heading">
+                        <i class="fa fa-comment"></i>connected users:<i class="fa fa-plus pull-right"></i><i
+                            class="fa fa-search pull-right"></i><i class="fa fa-refresh pull-right"></i>
+                    </div>
+                    <div class="widget-content">
+
+                        <div id="results">
+                            <ul>
+                                <li id="item1"></li>
+                                <li id="item2"></li>
+                                <li id="item3"></li>
+                                <li id="item4"></li>
+                                <li id="item5"></li>
+                            </ul>
+                            <p id="resultsExpl"></p>
+                        </div>
+                        <form>
+                            <fieldset>
+                                <label for="inputBox" id="placeLabel">
+                                    Type here, then click Submit:
+                                </label>
+                                <input type="text" id="inputBox" />
+                            </fieldset>
+                            <fieldset>
+                                <button type="button" id="button">Submit</button>
+                            </fieldset>
+                        </form>
+                        </article>
+
+                        <script>
+                            // Global variables
+                            var i = 1;
+                            var listItem = "";
+
+                            // function to process input
+                            function processInput() {
+                                if (i <= 5) {
+                                    listItem = "item" + i;
+                                    document.getElementById(listItem).innerHTML = document.getElementById("inputBox").value;
+                                    document.getElementById("inputBox").value = "";
+                                    if (i === 5) {
+                                        document.getElementById("resultsExpl").innerHTML = "Thanks for your suggestions.";
+                                    }
+                                    i += 1;
+                                }
+                            }
+
+                            // Backward compatable event listener for submit button
+                            var submitButton = document.getElementById("button");
+                            if (submitButton.addEventListener) {
+                                submitButton.addEventListener("click", processInput, false);
+                            }
+                            else if (submit.attachEvent) {
+                                submit.attachEvent("onclick", processInput);
+                            }
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    </div>
+
+
+
+    <!-- YOUR CODE HERE -->
+    <div class="position-bottom">
+        <div class="footer">
+            <h5>Facebook</h5>
+            <h5>Twitter</h5>
+            <h5>Instagram</h5>
+        </div>
+    </div>
+
+    <script src="/sidebar/js/jquery.min.js"></script>
+    <script src="/sidebar/js/popper.js"></script>
+    <script src="/sidebar/js/bootstrap.min.js"></script>
+    <script src="/sidebar/js/main.js"></script>
 </body>
 
 </html>

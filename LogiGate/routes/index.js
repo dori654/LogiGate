@@ -21,4 +21,8 @@ router.get("/Register", function (req, res) {
 router.get("/Game", function (req, res) {
   res.render("game");
 });
+
+router.get("/Chat", function (req, res) {
+  res.render("chat");
+});
 module.exports = router;

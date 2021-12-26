@@ -1,6 +1,6 @@
 .widget-container{
     width: 30%;
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 100%;
     transform: translate(0%, -250%);
