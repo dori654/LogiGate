@@ -13,12 +13,9 @@
 - Navigate to the project folder `cd LogiGate`
 
 - For Database install msi MongoDB from : https://www.mongodb.com/try/download/community
-- Create db folder inside MongoDB folder
-- enter to MongoDB - 'mongodb://localhost:27017/mydb'
 
 - On every launch use `npm run dev`
 - Open `localhost:3000` inside a web browser
--
 
 ## Files:
 
@@ -26,6 +23,7 @@
 📦LogiGate
  ┣ 📂bin                # Node.js bin folder
  ┣ 📂Dashboards         # Dashboards folder
+ ┣ 📂models             # Database model folder
  ┣ 📂public             # Public folder (scripts, stylesheets, images, etc.)
  ┃ ┣ 📂game_scripts     # Game scripts folder
  ┃ ┣ 📂images           # Images folder

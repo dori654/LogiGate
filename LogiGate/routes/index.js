@@ -2,27 +2,14 @@ var express = require("express");
 var router = express.Router();
 const mongoose = require("mongoose");
 var session = require('express-session');
+var controller = require("../controller/index_controller");
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express", user: req.session.username });
-});
 
-router.get("/Login", function (req, res) {
-  res.render("login", {
-    title: "Login page",
-  });
-});
+//Routes
+router.get("/", controller.homepage);
+router.get("/Login", controller.login);
+router.get("/Register", controller.register);
+router.get("/Game", controller.game);
+router.get("/Chat", controller.chat);
 
-router.get("/Register", function (req, res) {
-  res.render("register");
-});
-
-router.get("/Game", function (req, res) {
-  res.render("game");
-});
-
-router.get("/Chat", function (req, res) {
-  res.render("chat");
-});
 module.exports = router;

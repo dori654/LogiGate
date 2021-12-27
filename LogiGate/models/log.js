@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var logSchema = new Schema({
     user_id: {
         type: String,
-        unique: true
+        unique: false
     },
     activity: {
         type: [String],
