@@ -37,7 +37,7 @@ module.exports.any = async (req, res, next) => {
             }
         });
     } else {
-        next();
+        res.status(404).render("message", { message: "Page '" + req.params.any + "' not found" });
     }
 }
 
