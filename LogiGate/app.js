@@ -11,6 +11,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var dashboardRouter = require("./routes/dashboard");
 var databaseRouter = require("./routes/database");
+var rateRouter = require("./routes/rate");
 const { hasSubscribers } = require("diagnostics_channel");
 
 //request app
@@ -52,6 +53,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/Dashboards", dashboardRouter);
 app.use("/", databaseRouter);
+app.use("/rate", rateRouter);
 
 
 module.exports = app;

@@ -8,7 +8,7 @@ Saving.save = function()
         obj.ics.push({ name: ic.name, env: ic.environment.save() });
     }
 
-    var str = LZString.compressToBase64(JSON.stringify(obj));
+    var str = LZString.compressToBase64(JSON.stringify(obj)); //make stuff with this string
     
     
     alert("The following link copied to the clipboard:     " + str);

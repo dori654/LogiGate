@@ -8,6 +8,7 @@ const handler = require("../utils/handler")
 router.post("/Register", handler.catchErrors(controller.register));
 router.post('/Login', handler.catchErrors(controller.login));
 router.get('/signoff', handler.catchErrors(controller.signoff));
+router.get('/Rate', handler.catchErrors(controller.rate));
 
 
 
