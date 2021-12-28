@@ -11,5 +11,5 @@ router.get("/Login", controller.login);
 router.get("/Register", controller.register);
 router.get("/Game", controller.game);
 router.get("/Chat", controller.chat);
-
+router.get("/Rate",controller.rate);
 module.exports = router;

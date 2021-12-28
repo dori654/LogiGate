@@ -18,3 +18,9 @@ module.exports.chat = async (req, res) => {
     await res.render("chat");
 }
 
+module.exports.rate = async (req, res) => {
+    await res.render("rate");
+}
+
+
+
