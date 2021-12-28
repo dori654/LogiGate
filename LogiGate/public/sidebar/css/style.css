@@ -9533,8 +9533,7 @@ h5,
   font-family: fantasy;
   color: #000;
 }
-#sidebar .custom-menu .btn.btn-primary:after {
-}
+
 
 
 .bg-wrap .user-logo .img {
@@ -9582,9 +9581,7 @@ a[data-toggle="collapse"] {
  
   border-color: #2f89fc;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-}
+
 
 .footer p {
   color: rgba(255, 255, 255, 0.5);

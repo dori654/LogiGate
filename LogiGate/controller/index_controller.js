@@ -26,13 +26,14 @@ module.exports.tutorial = async (req, res) => {
     await res.render("tutorial");
 }
 
-module.exports.any = async (req, res) => {
+module.exports.any = async (req, res, next) => {
+    console.log("any function triggered");
     if (req.params.any.indexOf(".") === -1) {
         return await res.render(req.params.any, {}, (err, html) => {
             if (err) {
-                res.status(404).render("message", { message: "Page '" + req.params.any + "' not found" });
+                return res.status(404).render("message", { message: "Page '" + req.params.any + "' not found" });
             } else {
-                res.send(html);
+                return res.send(html);
             }
         });
     } else {

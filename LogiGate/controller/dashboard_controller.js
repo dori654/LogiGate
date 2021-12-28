@@ -1,6 +1,7 @@
 //tranfer dashboard function here
 var userDB = require("../models/user");
 var logger = require("../models/log");
+var roomDB = require("../models/room");
 
 module.exports.dashboard = (req, res, next) => {
     if (req.session.role && req.session.role.toLowerCase() !== "student") {
@@ -39,10 +40,10 @@ module.exports.edit = async (req, res) => {
                 });
             } else {
                 //make the edit page here
-                res.render('edituser', { 
+                res.render('edituser', {
                     title: "Edit User",
-                    layout:"dashboard_layout"
-             });
+                    layout: "dashboard_layout"
+                });
             }
         })
         .catch((err) => {
@@ -73,3 +74,10 @@ module.exports.reports = (req, res) => {
         });
     });
 }
+module.exports.rooms = async (req, res) => {
+    let rooms = [];
+    await roomDB.find({}, (err, data) => { data.forEach(d => rooms.push(d)) }).clone();
+    await res.render('rooms', { title: "Rooms", layout: "dashboard_layout", rooms: rooms });
+}
+
+
