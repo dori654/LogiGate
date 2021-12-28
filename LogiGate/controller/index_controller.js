@@ -22,5 +22,8 @@ module.exports.rate = async (req, res) => {
     await res.render("rate");
 }
 
+module.exports.tutorial = async (req, res) => {
+    await res.render("tutorial");
+}
 
 
