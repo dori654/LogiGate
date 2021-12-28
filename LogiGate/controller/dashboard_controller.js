@@ -39,7 +39,10 @@ module.exports.edit = async (req, res) => {
                 });
             } else {
                 //make the edit page here
-                res.render('message', { message: "Edit page does not exist" });
+                res.render('edituser', { 
+                    title: "Edit User",
+                    layout:"dashboard_layout"
+             });
             }
         })
         .catch((err) => {
