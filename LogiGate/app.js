@@ -11,6 +11,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var dashboardRouter = require("./routes/dashboard");
 var databaseRouter = require("./routes/database");
+var roomsRouter = require("./routes/rooms");
 const { hasSubscribers } = require("diagnostics_channel");
 
 //request app
@@ -44,13 +45,15 @@ app.set("views", [
 //set the views directory
 app.set("view engine", "hbs"); //set the view engine
 require("hbs").registerPartials(path.join(__dirname, "Dashboards")); //register partials
-// require("hbs").registerHelper('json', function (context) { return JSON.stringify(context); });
+
+
 //Tell node to use this links as paths
 app.use(loggerRouter);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/Dashboards", dashboardRouter);
 app.use("/", databaseRouter);
+app.use("/Dashboards/rooms", roomsRouter);
 
 module.exports = app;
 

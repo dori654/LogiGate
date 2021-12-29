@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+        {{> dashboard_sidebar }}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Rooms</h1>
+
+
+            <h2 class="sub-header">Active:</h2>
+            <div class="table-responsive">
+                <table class="table table-striped js-sort-table">
+                    <thead>
+                        <tr>
+                            <th>Room ID</th>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Players</th>
+                            <th>Rating</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each rooms}}
+                        <tr>
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td>
+                                <form action="rooms/edit/{{_id}}" method="post" id='room{{@index}}'>
+                                    <input type="text" name="code" class="form-control" id="code" value="{{code}}">
+                                </form>
+                            </td>
+                            <td>{{users}} </td>
+                            <td>{{rating}}</td>
+                            <td><input type="submit" form="room{{@index}}" value="Edit"> | <a
+                                    href="rooms/remove/{{_id}}">Remove</a></td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="sub-header">Create:</h2>
+            <form method="post" action="rooms/create">
+                <div class="form-group">
+                    <label for="roomname">Room Name:</label>
+                    <input type="text" name="roomname" class="form-control" id="roomname" placeholder="Enter room name">
+                </div>
+                <button type="submit" class="btn btn-primary">Create Room</button>
+            </form>
+        </div>
+    </div>
+</div>

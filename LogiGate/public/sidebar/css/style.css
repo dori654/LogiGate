@@ -75,7 +75,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
@@ -1763,7 +1763,7 @@ pre code {
   border-bottom: 2px solid #dee2e6;
 }
 .table tbody + tbody {
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
@@ -1831,7 +1831,7 @@ pre code {
 .table-secondary td,
 .table-secondary thead th,
 .table-secondary tbody + tbody {
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
@@ -1840,14 +1840,14 @@ pre code {
 }
 .table-hover .table-secondary:hover > td,
 .table-hover .table-secondary:hover > th {
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
 .table-success,
 .table-success > th,
 .table-success > td {
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
@@ -9299,7 +9299,7 @@ a.text-dark:focus {
     size: a3;
   }
   body {
-    background: url('/LogiGate/public/sidebar/images/bg.jpg');
+    background: url('sidebar/images/bg.jpg');
 
     min-width: 992px !important;
   }
@@ -9351,7 +9351,7 @@ a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 a:hover,
@@ -9388,7 +9388,7 @@ h5,
   line-height: 1.5;
   font-weight: 400;
   font-family: "Poppins", Arial, sans-serif;
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 
 }
 
@@ -9412,7 +9412,7 @@ h5,
   position: relative;
 }
 #sidebar .h6 {
-  background: url('/LogiGate/public/sidebar/images/bg.jpg');
+  background: url('sidebar/images/bg.jpg');
 }
 #sidebar.active {
   margin-left: -300px;
@@ -9533,8 +9533,7 @@ h5,
   font-family: fantasy;
   color: #000;
 }
-#sidebar .custom-menu .btn.btn-primary:after {
-}
+
 
 
 .bg-wrap .user-logo .img {
@@ -9582,9 +9581,7 @@ a[data-toggle="collapse"] {
  
   border-color: #2f89fc;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-}
+
 
 .footer p {
   color: rgba(255, 255, 255, 0.5);
