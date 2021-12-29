@@ -76,8 +76,8 @@ module.exports.reports = (req, res) => {
                 res.render('reports', {
                     title: "Reports",
                     layout: "dashboard_layout",
-                    // user: user.name,
-                    // action: logs.activity
+                    user: user.name,
+                    action: logs.activity
                 });
             }
         });
