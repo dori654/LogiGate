@@ -39,10 +39,10 @@ module.exports.edit = async (req, res) => {
                 });
             } else {
                 //make the edit page here
-                res.render('edituser', { 
+                res.render('edituser', {
                     title: "Edit User",
-                    layout:"dashboard_layout"
-             });
+                    layout: "dashboard_layout"
+                });
             }
         })
         .catch((err) => {
@@ -61,15 +61,23 @@ module.exports.analytics = (req, res) => {
 }
 
 module.exports.reports = (req, res) => {
-    logger.find({ user_id: req.params.user_id }).clone().lean().then(log => {
-        userDB.find({ user_id: req.params.user_id }).clone().lean().then(data => {
-            console.log(data);
-            res.render('reports', {
-                title: "Reports",
-                layout: "dashboard_layout",
-                user: data[0].name,
-                action: log[0].activity
-            });
+    //search for user_id in loggerdb and userdb in promise.all
+    Promise.all([
+        logger.findOne({ user_id: req.params.user_id }),
+        userDB.findOne({ user_id: req.params.user_id })
+    ])
+        .then(([logs, user]) => {
+            if (!logs || !user) {
+                res.status(404).render('message', {
+                    message: `Cannot find user with id ${req.params.user_id}`,
+                });
+            } else {
+                res.render('reports', {
+                    title: "Reports",
+                    layout: "dashboard_layout",
+                    // user: user.name,
+                    // action: logs.activity
+                });
+            }
         });
-    });
 }
