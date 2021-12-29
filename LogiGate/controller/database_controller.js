@@ -87,3 +87,25 @@ module.exports.rate = async (req, res) => {
         
     }).clone();
 }
+
+// exports.CheckLogin =(request,response)=>{
+//     var username = request.body.ID;
+//     var pass = request.body.password;
+//     if (username && pass) {
+//         await userModel.findOne({ user_id: request.body.ID, password: pass }, (err, data) => {
+//             if (data) {
+//                 request.session.loggedin = true;
+//                 request.session.username = data.name;
+//                 request.session.user_id = data.user_id;
+//                 request.session.role = data.role;
+//                 console.log(request.session.username);
+//                 return "Login Successful" ;
+//             } 
+//             else {
+//                 return "Login Unsuccessful";
+//             }
+//         });
+//     }
+// }; 
+    
+    
