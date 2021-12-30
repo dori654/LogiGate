@@ -3,6 +3,10 @@ var userDB = require("../models/user");
 var logger = require("../models/log");
 var roomDB = require("../models/room");
 
+const nodemailer = require("nodemailer");
+const path = require("path");
+require("dotenv").config({ path: path.join("..", "bin", ".env") });
+
 module.exports.dashboard = (req, res, next) => {
     if (req.session.role && req.session.role.toLowerCase() !== "student") {
         userDB.find({}, (err, users) => {
@@ -96,8 +100,38 @@ module.exports.news = (req, res) => {
 
 module.exports.send = async (req, res) => {
     await userDB.find({ role: req.body.role }, (err, data) => {
-        data.forEach(d => {
-            console.log("Sending mail to: ", d.name);
+        var mails = [];
+        data.forEach(d => mails.push(d.email));
+        console.log(req.body.news);
+        var mailer = nodemailer.createTestAccount((err, account) => {
+            // create reusable transporter object using the default SMTP transport
+            var transport = nodemailer.createTransport({
+                host: 'smtp.ethereal.email',
+                port: 587,
+                secure: false, // true for 465, false for other ports
+                auth: {
+                    user: process.env.mail, // generated ethereal user
+                    pass: process.env.pass  // generated ethereal password
+                }
+            });
+
+            var message = {
+                from: '"LogiGate" <erica.flatley22@ethereal.email>',
+                to: mails,
+                subject: "Message for: " + req.body.role,
+                text: req.body.news
+            }
+            transport.sendMail(message, (error, info) => {
+                if (error) {
+                    console.log('Error occurred');
+                    console.log(error.message);
+                    return;
+                }
+
+                console.log('Message sent successfully!');
+                console.log(nodemailer.getTestMessageUrl(info));
+                transport.close();
+            });
         });
     }).clone();
     await res.redirect(req.get('referer'));
