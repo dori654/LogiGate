@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "test": " _mocha ./__test__/database_controller.test.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -27,6 +28,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^27.4.5"
+    "chai": "^4.3.4",
+    "jest": "^27.4.5",
+    "mocha": "^9.1.3",
+    "sinon": "^12.0.1"
   }
 }
