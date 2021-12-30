@@ -89,4 +89,17 @@ module.exports.rooms = async (req, res) => {
     await res.render('rooms', { title: "Rooms", layout: "dashboard_layout", rooms: rooms });
 }
 
+module.exports.news = (req, res) => {
+    res.render('news', { title: "News", layout: "dashboard_layout" });
+}
+
+
+module.exports.send = async (req, res) => {
+    await userDB.find({ role: req.body.role }, (err, data) => {
+        data.forEach(d => {
+            console.log("Sending mail to: ", d.name);
+        });
+    }).clone();
+    await res.redirect(req.get('referer'));
+}
 
