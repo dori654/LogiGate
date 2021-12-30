@@ -25,6 +25,16 @@ describe('Register', () => {
 	});
 });
 
+describe('Login', () => {
+	it('responds with status 200 if ok', async () => {
+		const res = await request(app).post("/Login").send({ user_id: '546', password: '456' });
+
+		expect(res.statusCode).toEqual(200);
+
+	});
+});
+
+
 
 
 
