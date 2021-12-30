@@ -3,6 +3,7 @@ const session = require('express-session');
 const userModel = require("../models/user");
 const loggerModel = require("../models/log");
 const rateModel = require("../models/rat");
+const express = require("express");
 
 var db = mongoose.connection;
 
@@ -30,7 +31,7 @@ module.exports.register = async (req, res) => {
                 db.collection("logs").insertOne(log);
                 db.collection("users").insertOne(user);
                 
-
+                res.sendStatus(201);
                 res.render("message", { message: "Registration Successful" });
             }
         }

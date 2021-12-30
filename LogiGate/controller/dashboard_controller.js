@@ -13,7 +13,7 @@ module.exports.dashboard = (req, res, next) => {
             if (err) {
                 console.log(err);
             } else {
-                res.render("dashboard", {
+                return res.render("dashboard", {
                     title: "Dashboard",
                     students: users,
                     layout: "dashboard_layout"
@@ -21,7 +21,7 @@ module.exports.dashboard = (req, res, next) => {
             }
         }).clone();
     } else {
-        res.render("message", { message: "You are not authorized to view this page" });
+        return res.render("message", { message: "You are not authorized to view this page" });
     }
 }
 
@@ -173,4 +173,5 @@ module.exports.send = async (req, res) => {
     }).clone();
     await res.redirect(req.get('referer'));
 }
+
 
