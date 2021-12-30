@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        {{> dashboard_sidebar }}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Export Database</h1>
+            <form method="post" action="export_send">
+                <div class="form-group">
+                    <label for="role">IP address: </label>
+                    <input type="text" name="adrs" class="form-control" id="adrs" placeholder="IP..."> </input>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

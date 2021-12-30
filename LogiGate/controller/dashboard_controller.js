@@ -58,7 +58,44 @@ module.exports.edit = async (req, res) => {
 }
 
 module.exports.export = (req, res) => {
-    res.render('message', { message: "Export page does not exist" });
+    res.render('export', {
+        layout: "dashboard_layout",
+        title: "Export"
+    });
+}
+
+//if you unit test the function make sure to check for 404 answer because no 'real' ip address can be provided 
+// dori, and dani 
+module.exports.export_send = (req, res) => {
+    Promise.all([
+        logger.find({}),
+        userDB.find({}),
+        roomDB.find({})
+    ]).then(([logs, users, rooms]) => {
+        const net = require('net');
+        try {
+            const client = new net.Socket();
+            client.connect(8080, req.body.adrs, () => {
+                // callback, when connection successfull
+                client.write([logs, users, rooms]);
+            });
+            client.on('data', (data) => {
+                console.log(data.toString());
+            });
+            client.on('close', (data) => {
+                console.log('Connection closed');
+            });
+            client.on('error', (err) => {
+                console.log(err);
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }).catch((err) => {
+        console.log(err);
+        res.render('message', { message: err.message || 'Error in sending data' });
+    });
+    res.redirect(req.get('referer'));
 }
 
 module.exports.analytics = (req, res) => {

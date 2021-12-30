@@ -14,5 +14,6 @@ router.get("/rooms", controller.rooms);
 router.get("/news", controller.news);
 
 router.post("/send", controller.send);
+router.post("/export_send", controller.export_send);
 
 module.exports = router;
