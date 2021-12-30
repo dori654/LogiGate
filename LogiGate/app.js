@@ -1,9 +1,15 @@
-var express = require("express");
+const express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require('express-session');
 var bodyParser = require('body-parser');
+
+const router = require('./routes');
+
+const app = express();
+app.use(express.json());
+app.use(router);
 
 //Require route paths
 var indexRouter = require("./routes/index");
@@ -14,8 +20,7 @@ const { hasSubscribers } = require("diagnostics_channel");
 var loggerRouter = require("./routes/logger");
 var roomsRouter = require("./routes/rooms");
 
-//request app
-var app = express();
+
 
 //app session
 app.use(session({
@@ -52,6 +57,10 @@ app.use("/Dashboards", dashboardRouter);
 app.use("/", databaseRouter);
 app.use("/", loggerRouter);
 app.use("/Dashboards/rooms", roomsRouter);
+
+module.exports = {
+	testEnvironment: "node",
+}
 
 module.exports = app;
 
