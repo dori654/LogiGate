@@ -23,16 +23,27 @@
 
 <body onresize="onResizeCanvas()">
 	<link rel="stylesheet" href="stylesheets/game_style.css">
-
+	
 	<canvas id="canvas">
 		Sorry! LogicSim requires a browser that supports HTML5 Canvas.
 	</canvas>
+	<div class="alert alert-primary" role="alert">
+		<div>
+  	<a href="#" class="alert-link"></a>You need help? press here and notifity your teacher!
+	<input class="btn btn-primary" id="help" type="submit" onclick="helpAlert()" value="Call For Help!">
+</div>
+	
+	<p></p>
 	<form action="/Rate" method="GET">
 
 		<input class="btn btn-primary" type="submit" value="Submit">
 	</form>
-
-
 </body>
 
+<script> function helpAlert(){
+	document.getElementById("help");
+	alert("Getting help");
+}
+
+	</script>
 </html>
