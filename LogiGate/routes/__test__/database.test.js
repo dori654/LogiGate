@@ -1,10 +1,9 @@
 // const app = require('../../app');
-
-
 const request = require('supertest');
 const express = require('express');
 const app = require('../../app');
 const mongoose = require('mongoose');
+
 
 
 beforeAll(async () => {
@@ -17,7 +16,7 @@ beforeAll(async () => {
 
 
 describe('Register', () => {
-	it('responds with status 201 if ok', async () => {
+	it('responds with status 200 if ok', async () => {
 		const res = await request(app).post("/Register").send({ name: 'AntiParazi', email: '123@hghh', user_id: '546', password: '456' });
 
 		expect(res.statusCode).toEqual(200);
