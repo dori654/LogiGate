@@ -10,6 +10,8 @@ router.get("/edit/:_id", controller.edit);
 router.get("/export", controller.export);
 router.get("/analytics", controller.analytics);
 router.get("/reports/:user_id", controller.reports);
+router.get("/rooms", controller.rooms);
+
 
 
 module.exports = router;

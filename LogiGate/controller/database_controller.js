@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const session = require('express-session');
 const userModel = require("../models/user");
 const loggerModel = require("../models/log");
+const rateModel = require("../models/rat");
+
 var db = mongoose.connection;
 
 module.exports.register = async (req, res) => {
@@ -27,6 +29,7 @@ module.exports.register = async (req, res) => {
 
                 db.collection("logs").insertOne(log);
                 db.collection("users").insertOne(user);
+                
 
                 res.render("message", { message: "Registration Successful" });
             }
@@ -58,4 +61,29 @@ module.exports.login = async (request, response) => {
 module.exports.signoff = async (req, res) => {
     req.session.destroy();
     res.render('message', { message: "You have been signed off" });
+}
+
+module.exports.rate = async (req, res) => {
+    var rate = new rateModel({
+        user_id: req.body.ID,
+        rate: req.body.rate
+    });
+    db.collection("rates").insertOne(rate);
+    res.render("message", { message: "Rate submitted" });
+}
+
+module.exports.rate = async (req, res) => {
+    await rateModel.findOne({ user_id: req.body.ID }, (err, rate) => {
+            if (rate)
+                return res.render('message', { message: "Rate already exists" });
+            else {
+                const rate = new rateModel({
+                    user_id: req.body.ID,
+                    rate: req.body.rate
+                });
+            }
+            db.collection("rates").insertOne(rate);
+            res.render("message", { message: "Rate submitted" });
+        
+    }).clone();
 }
