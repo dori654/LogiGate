@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "test": " _mocha ./test/**.spec.js"
+    "test": "jest"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
