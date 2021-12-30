@@ -4,6 +4,8 @@ const path = require("path");
 const controller = require("../controller/database_controller");
 const handler = require("../utils/handler")
 
+
+
 //database routes
 router.post("/Register", handler.catchErrors(controller.register));
 router.post('/Login', handler.catchErrors(controller.login));
