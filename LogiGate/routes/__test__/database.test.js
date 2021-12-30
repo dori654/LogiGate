@@ -34,6 +34,15 @@ describe('Login', () => {
 	});
 });
 
+describe('Signoff', () => {
+	it('responds with status 200 if ok', async () => {
+		const res = await request(app).get("/signoff");
+
+		expect(res.statusCode).toEqual(200);
+
+	});
+});
+
 
 
 
