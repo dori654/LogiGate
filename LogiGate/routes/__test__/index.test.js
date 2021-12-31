@@ -39,5 +39,26 @@ describe('/', () => {
 });
 
 
+describe('/Game', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/Game");
+
+        expect(res.statusCode).toEqual(200);
+
+    });
+});
+
+
+describe('/Rate', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/Rate");
+
+        expect(res.statusCode).toEqual(200);
+
+    });
+}
+);
+
+
 
 
