@@ -90,4 +90,31 @@ describe('/Login', () => {
 }
 );
 
+describe('/Register', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/Register");
+
+        expect(res.statusCode).toEqual(200);
+
+    });
+}
+);
+
+
+// describe('/:any', () => {
+//     it('responds with status 200 if ok', async () => {
+//         const res = await request(app).get("/any");
+
+//         expect(res.statusCode).toEqual(200);
+
+//     });
+
+//     it('responds with status 404 if not found', async () => {
+//         const res = await request(app).get("/any");
+
+//         expect(res.statusCode).toEqual(404);
+
+//     }
+//     );
+// });
 
