@@ -70,6 +70,15 @@ describe('/Tutorial', () => {
 }
 );
 
+describe('/Chat', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/Chat");
+
+        expect(res.statusCode).toEqual(200);
+
+    });
+}
+);
 
 
 
