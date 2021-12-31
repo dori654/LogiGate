@@ -60,5 +60,16 @@ describe('/Rate', () => {
 );
 
 
+describe('/Tutorial', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/Tutorial");
+
+        expect(res.statusCode).toEqual(200);
+
+    });
+}
+);
+
+
 
 
