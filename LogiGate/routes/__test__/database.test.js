@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 beforeAll(async () => {
-	mongoose.connect("mongodb+srv://Team1:1234567z@team1.n8yrs.mongodb.net/LogiGate?retryWrites=true&w=majority");
+	mongoose.connect("mongodb+srv://Team1:1234567z@team1.n8yrs.mongodb.net/LogiGate_Test?retryWrites=true&w=majority");
 	var db = mongoose.connection;
 	db.on("error", () => console.log("Error in Connecting to Database"));
 	db.once("open", () => console.log("Connected to Database"));

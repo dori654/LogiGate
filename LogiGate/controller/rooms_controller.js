@@ -15,10 +15,12 @@ module.exports.create = (req, res, next) => {
         user.save();
         res.redirect("back");
     } else {
-        console.log("no room name");
-        next();
+        console.log("no room name"); //TESTING PURPOSE ONLY
+        res.sendStatus(400);
+        next().status(200);
     }
-    next();
+    res.sendStatus(400);
+    next().status(200);
 }
 
 module.exports.edit = async (req, res) => {
