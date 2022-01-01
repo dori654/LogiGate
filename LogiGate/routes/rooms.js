@@ -1,11 +1,26 @@
-var express = require("express");
-var router = express.Router();
-const controller = require("../controller/rooms_controller");
+// const app = require('../../app');
+const request = require('supertest');
+const express = require('express');
+const app = require('../../app');
+const mongoose = require('mongoose');
+const session = require('express-session');
+jest.setTimeout(10000);
 
 
-router.post("/create", controller.create);
-router.post("/edit/:_id", controller.edit);
-router.get("/remove/:_id", controller.remove);
 
+describe('create', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).post("/create").send({ 
+            
+            name: 'test',
+            users: ['test'],
+            rating: 0,
+            feedback: ['test'],
+            code: ""
+    
+        });
 
-module.exports = router;
+        expect(res.statusCode).toEqual(404);
+
+    });
+});
