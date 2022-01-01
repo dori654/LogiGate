@@ -24,3 +24,28 @@ describe('create', () => {
 
     });
 });
+
+
+describe('edit', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).post("/edit/5e9b3e9b3e9b3e9b3e9b3e9b").send({ 
+        
+            code: ""
+
+        });
+        if (!res.statusCode) {
+            expect(res.statusCode).toEqual(404);
+        }
+
+    });
+});
+
+describe('remove', () => {
+    it('responds with status 200 if ok', async () => {
+        const res = await request(app).get("/remove/5e9b3e9b3e9b3e9b3e9b3e9b");
+        if (!res.statusCode) {
+            expect(res.statusCode).toEqual(404);
+        }
+
+    });
+});
