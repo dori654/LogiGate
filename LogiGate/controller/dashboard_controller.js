@@ -98,8 +98,35 @@ module.exports.export_send = (req, res) => {
     res.redirect(req.get('referer'));
 }
 
-module.exports.analytics = (req, res) => {
-    res.render('message', { message: "Analytics page does not exist" });
+module.exports.analytics = async (req, res, next) => {
+    await Promise.all([
+        logger.find({}),
+        userDB.find({})
+    ]).then(([logs, users]) => {
+        var info = [];
+        users.forEach(user => {
+            var actions = 0;
+            var rates = 0;
+            logs.forEach(log => {
+                if (log.user_id === user.user_id) {
+                    log.activity.forEach(activity => {
+                        actions++;
+                        if (activity.includes("Rate")) { rates++; }
+                    });
+                }
+            });
+            info.push({
+                user: user.name,
+                actions: actions,
+                rates: rates
+            });
+            console.log(actions, rates);
+            actions = 0;
+            rates = 0;
+        });
+        return res.render('analytics', { title: "Analytics", layout: "dashboard_layout", users: info });
+    }).catch((err) => { console.log(err); next(); });
+    // return res.render('analytics', { title: "Analytics", layout: "dashboard_layout" });
 }
 
 module.exports.reports = (req, res) => {
@@ -173,5 +200,6 @@ module.exports.send = async (req, res) => {
     }).clone();
     await res.redirect(req.get('referer'));
 }
+
 
 

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="row">
+        {{> dashboard_sidebar }}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Analytics</h1>
+
+
+            <h2 class="sub-header">Statistics:</h2>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" onclick="show_print()">Export</button>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" onclick="error('no data for this year')">2021 Data <br></a>
+                    <a class="dropdown-item" onclick="error('no data for this year')">2020 Data <br></a>
+                    <a class="dropdown-item" onclick="error('no data for this year')">2019 Data <br></a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped js-sort-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                            <th>Rates</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {{#each users}}
+                        <tr>
+                            <td>{{@index}}</td>
+                            <td>{{user}}</td>
+                            <td>{{actions}}</td>
+                            <td>{{rates}}</td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function show_print() {
+        window.print();
+    }
+
+    function error(message) {
+        alert(message);
+    }
+</script>
