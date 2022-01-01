@@ -1,15 +1,10 @@
-const express = require("express");
+var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require('express-session');
 var bodyParser = require('body-parser');
 
-
-const router = require('./routes');
-const app = express();
-app.use(express.json());
-app.use(router);
 
 
 //Require route paths
@@ -24,6 +19,7 @@ var roomsRouter = require("./routes/rooms");
 
 
 //app session
+const app = express();
 app.use(session({
     secret: 'secret',
     resave: true,
