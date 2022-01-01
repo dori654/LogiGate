@@ -16,6 +16,7 @@ router.get("/Chat", controller.chat);
 router.get("/Rate", controller.rate);
 router.get("/Tutorial", controller.tutorial);
 
+router.post("/Rate", controller.post_rate);
 
 
 // router.get("/:any", controller.any);

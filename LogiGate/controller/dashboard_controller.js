@@ -120,7 +120,6 @@ module.exports.analytics = async (req, res, next) => {
                 actions: actions,
                 rates: rates
             });
-            console.log(actions, rates);
             actions = 0;
             rates = 0;
         });
@@ -200,6 +199,38 @@ module.exports.send = async (req, res) => {
     }).clone();
     await res.redirect(req.get('referer'));
 }
+
+module.exports.send_push = async (req, res) => {
+    var transport = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: process.env.mail, // generated ethereal user
+            pass: process.env.pass  // generated ethereal password
+        }
+    });
+
+    var message = {
+        from: '"LogiGate" <erica.flatley22@ethereal.email>',
+        to: req.body.mail,
+        subject: "Message for: " + req.body.mail,
+        text: req.body.message
+    }
+    transport.sendMail(message, (error, info) => {
+        if (error) {
+            console.log('Error occurred');
+            console.log(error.message);
+            return;
+        }
+
+        console.log('Message sent successfully!');
+        console.log(nodemailer.getTestMessageUrl(info));
+        transport.close();
+    });
+    await res.redirect(req.get('referer'));
+
+};
 
 
 

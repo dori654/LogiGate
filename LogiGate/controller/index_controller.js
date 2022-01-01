@@ -1,3 +1,5 @@
+const roomDB = require("../models/room");
+
 module.exports.homepage = async (req, res, next) => {
     await res.render("index", { title: "Express", user: req.session.username });
 }
@@ -20,6 +22,21 @@ module.exports.chat = async (req, res) => {
 
 module.exports.rate = async (req, res) => {
     await res.render("rate");
+}
+
+module.exports.post_rate = (req, res) => {
+    //raiting comment code
+    roomDB.findByIdAndUpdate(req.body.room_id, {
+        $push: { feedback: req.body.comment },
+        $inc: { rating: req.body.rating },
+        //push username to users array if not exist
+        $addToSet: { users: req.session.username }
+    }, (err, room) => {
+        if (err) {
+            console.log(err);
+        }
+    }).clone();
+    return res.redirect("/");
 }
 
 module.exports.tutorial = async (req, res) => {

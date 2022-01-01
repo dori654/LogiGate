@@ -7,7 +7,7 @@
 
             <h2 class="sub-header">Send:</h2>
             <form method="post" action="send">
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="role">For: </label>
                     <select class="form-control" id="role" name="role">
                         <option>Teacher</option>
@@ -20,6 +20,20 @@
                         placeholder="mail text"> </textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+            <h2 class="sub-header">Push messages:</h2>
+            <form action="send_push" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="mail" placeholder="Mail Address"
+                        aria-label="Mail Address" aria-describedby="basic-addon1">
+                </div>
+                <label for="message">Text:</label>
+                <textarea type="text" name="message" class="form-control" id="message"
+                    placeholder="message text"> </textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Send</button>
+
             </form>
         </div>
     </div>
