@@ -35,9 +35,17 @@ module.exports.remove = async (req, res) => {
     }).clone();
 }
 
-module.exports.edit = async (req, res) => {
-    await userDB.findByIdAndUpdate(req.params._id, req.body, { useFindAndModify: false })
+module.exports.edit_post = async (req, res) => {
+    console.log(req.body);
+    await userDB.findByIdAndUpdate(req.params._id, {
+        name: req.body.name,
+        email: req.body.mail,
+        password: req.body.pass,
+        phone: req.body.phone
+
+    }, { useFindAndModify: false })
         .then((data) => {
+            console.log(data);
             if (!data) {
                 res.status(404).render('message', {
                     message: `Cannot Update user with id ${req.params._id} , Maybe User Not Found`,
@@ -55,6 +63,14 @@ module.exports.edit = async (req, res) => {
                 message: err.message || 'Error Update User Information',
             });
         });
+}
+
+module.exports.edit = async (req, res) => {
+    res.render('edituser', {
+        title: "Edit User",
+        layout: "dashboard_layout",
+        _id: req.params._id
+    });
 }
 
 module.exports.export = (req, res) => {

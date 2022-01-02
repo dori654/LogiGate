@@ -13,6 +13,7 @@ router.get("/reports/:user_id", controller.reports);
 router.get("/rooms", controller.rooms);
 router.get("/news", controller.news);
 
+router.post("/edit/:_id", controller.edit_post);
 router.post("/send", controller.send);
 router.post("/send_push", controller.send_push);
 router.post("/export_send", controller.export_send);
