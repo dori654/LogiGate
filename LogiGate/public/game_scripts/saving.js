@@ -40,3 +40,6 @@ Saving.load = function (str) {
 
     logicSim.load(obj.root, ics);
 }
+
+module.exports= [Saving.load,Saving.save,Saving.loadFromHash,Saving.loadFromPrompt]
+
