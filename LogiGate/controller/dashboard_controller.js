@@ -152,7 +152,7 @@ module.exports.reports = (req, res) => {
     ])
         .then(([logs, user]) => {
             if (!logs || !user) {
-                res.status(404).render('message', {
+                res.status(500).render('message', {
                     message: `Cannot find user with id ${req.params.user_id}`,
                 });
             } else {

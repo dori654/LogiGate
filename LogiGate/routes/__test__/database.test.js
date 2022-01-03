@@ -17,7 +17,7 @@ beforeAll(async () => {
 
 describe('Register', () => {
 	it('responds with status 200 if ok', async () => {
-		const res = await request(app).post("/Register").send({ name: 'AntiParazi', email: '123@hghh', user_id: '546', password: '456' });
+		const res = await request(app).post("/Register").send({ f_name: 'AntiParazit', email: '1123@hghh', ID: '1234', password: '456' });
 
 		expect(res.statusCode).toEqual(200);
 
@@ -26,7 +26,7 @@ describe('Register', () => {
 
 describe('Login', () => {
 	it('responds with status 200 if ok', async () => {
-		const res = await request(app).post("/Login").send({ user_id: '546', password: '456' });
+		const res = await request(app).post("/Login").send({ user_id: '1234', password: '456' });
 
 		expect(res.statusCode).toEqual(200);
 
