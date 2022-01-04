@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/main.css">
-</head>
-<body>
-      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
-<!-- Background & animion & navbar & title -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <!-- Background & animion & navbar & title -->
   <div class="container-fluid">
-<!-- Background animtion-->
+    <!-- Background animtion-->
     <div class="background">
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
-       <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
       <div class="cube"></div>
     </div>
-<!-- header -->
-   <header>
-<!-- navbar -->
-     <nav>
+    <!-- header -->
+    <header>
+      <!-- navbar -->
+      <nav>
         <ul>
-         <li><a href="/" class="active">Home</a></li>
-         <li><a href="/Game">Game</a> </li>
-         <li><a href="../Dashboards/dashboard">Dashboard</a></li>
-         <li><a href="/Register" class="right">Sign Up</a> </li>
-         <li><a href="/Login" class="right">Sign In</a> </li>
-         <li><a href="/Tutorial"> Tutorial</a> </li>
-         </ul>
-       </nav>
-<!-- logo -->
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/Game">Game</a> </li>
+          <li><a href="../Dashboards/dashboard">Dashboard</a></li>
+          <li><a href="/Register" class="right">Sign Up</a> </li>
+          <li><a href="/signoff" class="right">Sign out</a> </li>
+          <li><a href="/Tutorial"> Tutorial</a> </li>
+        </ul>
+      </nav>
+      <!-- logo -->
       <div class="logo"><span>L</span></div>
-<!-- title & content -->
+      <!-- title & content -->
       <section class="header-content">
-         <h1>LogiGate</h1>
+        <h1>LogiGate</h1>
         <p> Boolean algebra and logic circuit simulator </p>
         <button onclick="window.location.href='/Game';">Start Game!</button>
+        {{#if user}}
+        {{else}}
         <button onclick="window.location.href='/Login';">Login</button>
+        {{/if}}
+
+
+        <div class="user-logo">
+          <div class="img" style="background-image: url(/sidebar/images/logo.jpg);"></div>
+          {{#if user}}
+          <h3>{{user}} is online</h3>
+          {{else}}
+          <h3>Guest</h3>
+          {{/if}}
+
+        </div>
       </section>
-  </header>
-    
+    </header>
+
 </body>
+
 </html>
