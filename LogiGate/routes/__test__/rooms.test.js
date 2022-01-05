@@ -9,8 +9,8 @@ jest.setTimeout(10000);
 
 
 describe('create', () => {
-    it('responds with status 200 if ok', async () => {
-        const res = await request(app).post("/create").send({ 
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).post("/room/create").send({ 
             
             name: 'test',
             users: ['test'],
@@ -26,24 +26,34 @@ describe('create', () => {
 });
 
 
+describe('edit with non valid account ', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get('/room/edit/5e9b3e9b3**test**9b3e9b3e9b');
+
+        expect(res.status).toBe(404);
+    });
+});
+
 describe('edit', () => {
-    it('responds with status 200 if ok', async () => {
-        const res = await request(app).post("/edit/5e9b3e9b3e9b3e9b3e9b3e9b").send({ 
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).post("/room/edit/5e9b3e9b3e9b3e9b3e9b3e9b").send({ 
         
             code: ""
 
         });
-        if (!res.statusCode) {
+        if (res.statusCode) {
             expect(res.statusCode).toEqual(404);
         }
 
     });
 });
 
+
+
 describe('remove', () => {
-    it('responds with status 200 if ok', async () => {
+    it('responds with status 404 if ok', async () => {
         const res = await request(app).get("/remove/5e9b3e9b3e9b3e9b3e9b3e9b");
-        if (!res.statusCode) {
+        if (res.statusCode) {
             expect(res.statusCode).toEqual(404);
         }
 

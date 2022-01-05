@@ -15,7 +15,7 @@ beforeAll(async () => {
 });
 
 
-describe('Register', () => {
+describe('Register a test user ', () => {
 	it('responds with status 200 if ok', async () => {
 		const res = await request(app).post("/Register").send({ f_name: 'AntiParazit', email: '1123@hghh', ID: '1234', password: '456' });
 
@@ -24,9 +24,19 @@ describe('Register', () => {
 	});
 });
 
-describe('Login', () => {
+describe('Login valid user', () => {
 	it('responds with status 200 if ok', async () => {
 		const res = await request(app).post("/Login").send({ user_id: '1234', password: '456' });
+
+		expect(res.statusCode).toEqual(200);
+
+	});
+});
+
+
+describe('Login second user ', () => {
+	it('responds with status 200 if ok', async () => {
+		const res = await request(app).post("/Login").send({ user_id: '99999', password: '99999' });
 
 		expect(res.statusCode).toEqual(200);
 
@@ -42,6 +52,16 @@ describe('Signoff', () => {
 	});
 });
 
+
+describe('Signoff not valid ', () => {
+	it('responds with status 404 if ok', async () => {
+		const res = await request(app).get("/signoff/test");
+
+		expect(res.statusCode).toEqual(404);
+
+	});
+});
+
 describe('Rate', () => {
 	it('responds with status 200 if ok', async () => {
 		const res = await request(app).get("/Rate");
@@ -52,6 +72,14 @@ describe('Rate', () => {
 });
 
 
+describe('Rate false ', () => {
+	it('responds with status 404 if ok', async () => {
+		const res = await request(app).get("/Rate/test");
+
+		expect(res.statusCode).toEqual(404);
+
+	});
+});
 
 
 

@@ -17,7 +17,7 @@ mockApp.all('*', function (req, res, next) {
 mockApp.use(app);
 
 
-describe('Game', () => {
+describe('Game with 200', () => {
     it('responds with status 200 if ok', async () => {
         const res = await request(app).get("/Game");
 
@@ -27,11 +27,33 @@ describe('Game', () => {
 });
 
 
-describe('Rate', () => {
+describe('Game.test with 404', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Game/test");
+
+        expect(res.statusCode).toEqual(404);
+
+    });
+});
+
+
+
+describe('Rate 200', () => {
     it('responds with status 200 if ok', async () => {
         const res = await request(app).get("/Rate");
 
         expect(res.statusCode).toEqual(200);
+
+    });
+});
+
+
+
+describe('Rate.test 404', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Rate/test");
+
+        expect(res.statusCode).toEqual(404);
 
     });
 });

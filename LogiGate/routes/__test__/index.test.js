@@ -70,6 +70,17 @@ describe('/Tutorial', () => {
 }
 );
 
+
+
+describe('/Tutorial with 404 ', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Tutorial/test");
+
+        expect(res.statusCode).toEqual(404);
+
+    });
+});
+
 describe('/Chat', () => {
     it('responds with status 200 if ok', async () => {
         const res = await request(app).get("/Chat");
@@ -77,8 +88,16 @@ describe('/Chat', () => {
         expect(res.statusCode).toEqual(200);
 
     });
-}
-);
+});
+
+describe('/Chat.test with 404 ', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Chat/test");
+
+        expect(res.statusCode).toEqual(404);
+
+    });
+});
 
 describe('/Login', () => {
     it('responds with status 200 if ok', async () => {
@@ -90,7 +109,19 @@ describe('/Login', () => {
 }
 );
 
-describe('/Register', () => {
+
+
+describe('/Login.test with 404', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Login/test");
+
+        expect(res.statusCode).toEqual(404);
+
+    });
+}
+);
+
+describe('/enter Register page', () => {
     it('responds with status 200 if ok', async () => {
         const res = await request(app).get("/Register");
 
@@ -101,20 +132,13 @@ describe('/Register', () => {
 );
 
 
-// describe('/:any', () => {
-//     it('responds with status 200 if ok', async () => {
-//         const res = await request(app).get("/any");
+describe('/enter Register page worng', () => {
+    it('responds with status 404 if ok', async () => {
+        const res = await request(app).get("/Register/test");
 
-//         expect(res.statusCode).toEqual(200);
+        expect(res.statusCode).toEqual(404);
 
-//     });
-
-//     it('responds with status 404 if not found', async () => {
-//         const res = await request(app).get("/any");
-
-//         expect(res.statusCode).toEqual(404);
-
-//     }
-//     );
-// });
+    });
+}
+);
 
