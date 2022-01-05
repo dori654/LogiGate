@@ -121,7 +121,7 @@ describe('/get news', () => {
     });
 });
 
-describe('/get non valid news', () => {
+describe('/post non valid news', () => {
     it('should return 404', async () => {
         const res = await request(app).post('/Dashboards/news')
         expect(res.statusCode).toEqual(404);

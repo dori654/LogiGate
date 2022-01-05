@@ -106,13 +106,12 @@ describe('/Login', () => {
         expect(res.statusCode).toEqual(200);
 
     });
-}
-);
+});
 
 
 
 describe('/Login.test with 404', () => {
-    it('responds with status 404 if ok', async () => {
+    it('responds with status 404 if not ok', async () => {
         const res = await request(app).get("/Login/test");
 
         expect(res.statusCode).toEqual(404);
@@ -132,7 +131,7 @@ describe('/enter Register page', () => {
 );
 
 
-describe('/enter Register page worng', () => {
+describe('/enter Register page wrong', () => {
     it('responds with status 404 if ok', async () => {
         const res = await request(app).get("/Register/test");
 
