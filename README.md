@@ -1,9 +1,5 @@
 ## LogiGate
 
-## What happened
-
-1. The 'LogiGate' Folder is node.js folder
-2. Conversion to node.js began my friends
 
 ## How to Run:
 
